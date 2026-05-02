@@ -146,40 +146,126 @@
   </div>
 </section>
 
-<!-- =============== STEP 3 — HOW IT WORKS (de-risk: they know the steps) =============== -->
-<section class="bg-paper py-24 md:py-32 px-6 md:px-10">
+<!-- =============== STEP 3 — HOW IT WORKS (scroll-pinned narrative) =============== -->
+<section class="bg-paper py-20 md:py-32 px-6 md:px-10 how-it-works">
   <div class="max-w-7xl mx-auto">
-    <p class="eyebrow text-muted mb-4 reveal">Zo werken we</p>
-    <h2 class="serif h1 text-ink mb-16 max-w-3xl reveal" style="transition-delay:.1s">Vier stappen, geen verrassingen.</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 reveal-stagger grid-4-mobile-2">
-      <div class="step-line">
-        <div class="mono text-xs text-brick mb-4">01 / Dag 1</div>
-        <h3 class="serif text-2xl text-ink mb-3">Bezoek bij u thuis</h3>
-        <p class="text-sm text-muted leading-relaxed">Pieter komt zelf langs op een moment dat past. Hij meet, fotografeert, luistert. Duurt ongeveer een uur.</p>
-        <p class="mt-3 mono text-xs text-muted">gratis · vrijblijvend</p>
-      </div>
-      <div class="step-line">
-        <div class="mono text-xs text-brick mb-4">02 / Binnen 5 werkdagen</div>
-        <h3 class="serif text-2xl text-ink mb-3">Schets &amp; richtprijs</h3>
-        <p class="text-sm text-muted leading-relaxed">U krijgt een handgetekende schets en een richtprijs op één A4. Geen vakjargon, geen kleine lettertjes.</p>
-        <p class="mt-3 mono text-xs text-muted">gratis · per email + post</p>
-      </div>
-      <div class="step-line">
-        <div class="mono text-xs text-brick mb-4">03 / Pas na uw OK</div>
-        <h3 class="serif text-2xl text-ink mb-3">Definitieve offerte</h3>
-        <p class="text-sm text-muted leading-relaxed">Akkoord? Dan tekenen we de tuin uit op schaal en sturen een vaste offerte. Voorschot pas bij ondertekening.</p>
-        <p class="mt-3 mono text-xs text-muted">vaste prijs · geen meerwerk zonder akkoord</p>
-      </div>
-      <div class="step-line">
-        <div class="mono text-xs text-brick mb-4">04 / Werf</div>
-        <h3 class="serif text-2xl text-ink mb-3">Wij bouwen, u kijkt</h3>
-        <p class="text-sm text-muted leading-relaxed">Eén werf per keer, met dezelfde vier mensen. U krijgt elke vrijdag een foto-update tot we klaar zijn.</p>
-        <p class="mt-3 mono text-xs text-muted">4–10 weken doorlooptijd</p>
-      </div>
+    <div class="mb-16 md:mb-24">
+      <p class="eyebrow text-muted mb-4 reveal">Zo werken we</p>
+      <h2 class="serif h1 text-ink reveal max-w-3xl" style="transition-delay:.1s">Vier stappen, geen verrassingen.</h2>
+      <p class="text-muted mt-4 max-w-xl reveal" style="transition-delay:.2s">Elke stap heeft één doel. Geen offerte zonder bezoek. Geen factuur zonder akkoord. Geen werf zonder schets.</p>
     </div>
 
-    <div class="mt-16 text-center reveal">
+    <!-- desktop: sticky-scroll narrative. mobile: stacked cards -->
+    <div class="hiw-grid">
+
+      <!-- sticky image column (desktop only) -->
+      <div class="hiw-sticky hidden md:block">
+        <div class="hiw-visual-stack">
+          <figure class="hiw-visual" data-step="1">
+            <img src="img/hands-shears.jpg" alt="Pieter tijdens bezoek: meten, luisteren, noteren" />
+            <figcaption class="hiw-caption"><span class="mono text-[11px]">01 / Dag 1 · Bezoek bij u thuis</span></figcaption>
+          </figure>
+          <figure class="hiw-visual" data-step="2">
+            <img src="img/design-flatlay.jpg" alt="Handgetekende schets met richtprijs op één A4" />
+            <figcaption class="hiw-caption"><span class="mono text-[11px]">02 / Binnen 5 werkdagen · Schets &amp; richtprijs</span></figcaption>
+          </figure>
+          <figure class="hiw-visual" data-step="3">
+            <img src="img/hands-pavers.jpg" alt="Uitgewerkte plannen op schaal en definitieve offerte" />
+            <figcaption class="hiw-caption"><span class="mono text-[11px]">03 / Pas na uw OK · Definitieve offerte</span></figcaption>
+          </figure>
+          <figure class="hiw-visual" data-step="4">
+            <img src="img/aerial-terrace.jpg" alt="De werf in uitvoering met vier vaste mensen" />
+            <figcaption class="hiw-caption"><span class="mono text-[11px]">04 / Werf · Wij bouwen, u kijkt</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- scrolling text column -->
+      <ol class="hiw-steps">
+        <li class="hiw-step" data-step="1">
+          <!-- inline image for mobile stacked layout -->
+          <div class="hiw-mobile-img md:hidden">
+            <img src="img/hands-shears.jpg" alt="Bezoek bij u thuis" />
+          </div>
+          <div class="hiw-step-body">
+            <span class="hiw-index mono">01</span>
+            <p class="eyebrow text-brick mb-3">Dag 1</p>
+            <h3 class="serif text-3xl md:text-4xl text-ink mb-4">Bezoek bij u thuis</h3>
+            <p class="text-muted leading-relaxed mb-5 md:text-lg">
+              Pieter komt zelf langs op een moment dat past — ook 's zaterdagvoormiddag. Hij meet, fotografeert, luistert naar wat u al drie winters zit te bedenken. Duurt ongeveer een uur.
+            </p>
+            <ul class="hiw-detail">
+              <li>Meting + foto's van de volledige tuin</li>
+              <li>Bodem- en zoninschatting ter plaatse</li>
+              <li>Gesprek over gebruik, onderhoud, budget</li>
+            </ul>
+            <p class="mono text-xs text-muted mt-5">gratis · vrijblijvend · geen verkoopsgesprek</p>
+          </div>
+        </li>
+
+        <li class="hiw-step" data-step="2">
+          <div class="hiw-mobile-img md:hidden">
+            <img src="img/design-flatlay.jpg" alt="Schets en richtprijs" />
+          </div>
+          <div class="hiw-step-body">
+            <span class="hiw-index mono">02</span>
+            <p class="eyebrow text-brick mb-3">Binnen 5 werkdagen</p>
+            <h3 class="serif text-3xl md:text-4xl text-ink mb-4">Schets &amp; richtprijs</h3>
+            <p class="text-muted leading-relaxed mb-5 md:text-lg">
+              U krijgt een handgetekende schets en een richtprijs op één A4 — geen vakjargon, geen kleine lettertjes, geen &ldquo;vanaf€-prijzen&rdquo;. Een eerlijke range zodat u weet of we in elkaars budget zitten.
+            </p>
+            <ul class="hiw-detail">
+              <li>Schets op schaal, met planten + materialen benoemd</li>
+              <li>Richtprijs met min–max range, geen losse posten</li>
+              <li>Verstuurd per post én als pdf per email</li>
+            </ul>
+            <p class="mono text-xs text-muted mt-5">gratis · per post + email · u beslist daarna</p>
+          </div>
+        </li>
+
+        <li class="hiw-step" data-step="3">
+          <div class="hiw-mobile-img md:hidden">
+            <img src="img/hands-pavers.jpg" alt="Definitieve offerte en uitwerking" />
+          </div>
+          <div class="hiw-step-body">
+            <span class="hiw-index mono">03</span>
+            <p class="eyebrow text-brick mb-3">Pas na uw OK</p>
+            <h3 class="serif text-3xl md:text-4xl text-ink mb-4">Definitieve offerte</h3>
+            <p class="text-muted leading-relaxed mb-5 md:text-lg">
+              Akkoord met de richtprijs? Dan werken we de tuin uit op schaal — beplantingsplan, materiaalstaat, en een vaste offerte met eenheidsprijzen. Voorschot pas bij ondertekening. Meerwerk enkel na schriftelijk akkoord.
+            </p>
+            <ul class="hiw-detail">
+              <li>Beplantingsplan met botanische namen + aantallen</li>
+              <li>Vaste offerte, eenheidsprijzen, aparte posten</li>
+              <li>Betalingsschema: 30% start · 40% halfweg · 30% oplevering</li>
+            </ul>
+            <p class="mono text-xs text-muted mt-5">vaste prijs · geen meerwerk zonder uw schriftelijk akkoord</p>
+          </div>
+        </li>
+
+        <li class="hiw-step" data-step="4">
+          <div class="hiw-mobile-img md:hidden">
+            <img src="img/aerial-terrace.jpg" alt="De werf met vier vaste mensen" />
+          </div>
+          <div class="hiw-step-body">
+            <span class="hiw-index mono">04</span>
+            <p class="eyebrow text-brick mb-3">Werf</p>
+            <h3 class="serif text-3xl md:text-4xl text-ink mb-4">Wij bouwen, u kijkt</h3>
+            <p class="text-muted leading-relaxed mb-5 md:text-lg">
+              Eén werf per keer, met dezelfde vier mensen: Pieter, Bart, Joris en Tibo. U krijgt elke vrijdag een foto-update en één contactpersoon op de werf. Na oplevering: nazorgbezoek op 6 en 12 maanden.
+            </p>
+            <ul class="hiw-detail">
+              <li>Eén werf per keer — nooit opgedeeld over meerdere obra's</li>
+              <li>Foto-update elke vrijdagavond in uw mailbox</li>
+              <li>Garantie van één jaar op vaste planten + bomen</li>
+            </ul>
+            <p class="mono text-xs text-muted mt-5">4–10 weken doorlooptijd · nazorg op 6 + 12 maanden</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="mt-16 md:mt-20 text-center reveal">
       <a href="#funnel" class="btn btn-primary">Stap 1 starten — vrijblijvend bezoek</a>
     </div>
   </div>
@@ -201,22 +287,22 @@
         </div>
         <p class="mono text-[11px] text-paper/50 mb-2">Stadstuin · 8000 Brugge · 125 m²</p>
         <h3 class="serif text-2xl mb-2">Sint-Anna ommuurde tuin</h3>
-        <p class="text-paper/65 text-sm leading-relaxed mb-4">Bluesteen visgraat, cortenstaal plantbakken, 22 vaste planten. 18de-eeuwse rijwoning.</p>
+        <p class="text-paper/65 text-sm leading-relaxed mb-4">Bluesteen visgraat (65 m²), cortenstaal plantbakken (14 m), 22 vaste planten en 3 klimop op draad. 18de-eeuwse rijwoning met moeilijke aanvoer — alles via de gang.</p>
         <div class="flex justify-between items-baseline pt-3 border-t border-paper/10">
           <span class="mono text-xs text-paper/50">richtprijs</span>
-          <span class="serif text-lg">€ 38 000 · 6 weken</span>
+          <span class="serif text-lg">€ 42 000 · 7 weken</span>
         </div>
       </a>
       <a href="realisaties.html" class="block group">
         <div class="aspect-[3/4] overflow-hidden mb-5 bg-stone-800">
-          <img src="img/project-pastorij.jpg" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" alt="Renaissance pastorij in Lissewege — 2200 m² met inheemse vaste planten en hersteld kasseiwerk" />
+          <img src="img/project-pastorij.jpg" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700" alt="Pastorij in Lissewege — 850 m² tuindeel met inheemse vaste planten en hersteld kasseiwerk" />
         </div>
-        <p class="mono text-[11px] text-paper/50 mb-2">Pastorij · 8380 Lissewege · 2 200 m²</p>
-        <h3 class="serif text-2xl mb-2">Renaissance pastorij — herstel</h3>
-        <p class="text-paper/65 text-sm leading-relaxed mb-4">Borders met inheemse vaste planten en oude rozen. Kasseiwerk hersteld op originele plek.</p>
+        <p class="mono text-[11px] text-paper/50 mb-2">Pastorij · 8380 Lissewege · 850 m² tuindeel</p>
+        <h3 class="serif text-2xl mb-2">Pastorij — borders &amp; kasseien</h3>
+        <p class="text-paper/65 text-sm leading-relaxed mb-4">Herstel van 850 m² tuindeel: inheemse vaste plantenborders (190 m²), oude rozen bijgeplant, authentiek kasseiwerk hersteld op originele plek (62 m²). Terrein van 2 200 m² in totaal.</p>
         <div class="flex justify-between items-baseline pt-3 border-t border-paper/10">
           <span class="mono text-xs text-paper/50">richtprijs</span>
-          <span class="serif text-lg">€ 86 000 · 12 weken</span>
+          <span class="serif text-lg">€ 78 000 · 14 weken</span>
         </div>
       </a>
       <a href="realisaties.html" class="block group">
@@ -225,10 +311,10 @@
         </div>
         <p class="mono text-[11px] text-paper/50 mb-2">Architectenwoning · 8200 Sint-Michiels · 480 m²</p>
         <h3 class="serif text-2xl mb-2">Sint-Michiels — minimaal</h3>
-        <p class="text-paper/65 text-sm leading-relaxed mb-4">Eén Japanse esdoorn, één corten plantbak, één bluesteen plateau van 60 m². Verder niets.</p>
+        <p class="text-paper/65 text-sm leading-relaxed mb-4">Eén Japanse esdoorn (Acer palmatum &lsquo;Sango-kaku&rsquo;), één corten plantbak van 4,5 m, één bluesteen plateau van 60 m². Gras op de rest. Minimale beplanting, maximum afwerking.</p>
         <div class="flex justify-between items-baseline pt-3 border-t border-paper/10">
           <span class="mono text-xs text-paper/50">richtprijs</span>
-          <span class="serif text-lg">€ 24 000 · 4 weken</span>
+          <span class="serif text-lg">€ 68 000 · 9 weken</span>
         </div>
       </a>
     </div>
@@ -239,31 +325,60 @@
   </div>
 </section>
 
-<!-- =============== TIMELAPSE — one day on the werf =============== -->
-<section class="bg-paper py-24 md:py-32 px-6 md:px-10">
+<!-- =============== PROCESS STRIP — real photos of real phases (honest, no AI video drift) =============== -->
+<section class="bg-paper py-20 md:py-28 px-6 md:px-10">
   <div class="max-w-7xl mx-auto">
     <div class="grid md:grid-cols-12 gap-10 items-end mb-10">
       <div class="md:col-span-7 reveal">
-        <p class="eyebrow text-muted mb-4">Een dag op de werf</p>
-        <h2 class="serif h1 text-ink">Van leeg tot opgeleverd — in tien seconden.</h2>
+        <p class="eyebrow text-muted mb-4">Vier fases op één werf</p>
+        <h2 class="serif h1 text-ink">Uitgraven, uitvlakken, uitplanten, uitrijden.</h2>
       </div>
       <div class="md:col-span-5 reveal" style="transition-delay:.1s">
         <p class="text-muted leading-relaxed">
-          Time-lapse van een werfdag in Sint-Anna. De ploeg werkt in beeld:
-          materialen lossen, bluesteen leggen, beplanting plaatsen, opruimen.
-          Geen knip-en-plak, geen voice-over. Gewoon één dag.
+          Een werf verloopt in vier logische fases, nooit door elkaar. Van eerste schop in de grond tot laatste veegborstel op de oprit — altijd in deze volgorde, met dezelfde vier mensen.
         </p>
       </div>
     </div>
-    <div class="aspect-video w-full overflow-hidden bg-ink reveal" style="transition-delay:.15s">
-      <video autoplay muted loop playsinline poster="img/timelapse-end.jpg" class="w-full h-full object-cover" data-autoplay>
-        <source src="vid/timelapse-werf.mp4" type="video/mp4">
-        <source src="vid/aerial-terrace.mp4" type="video/mp4">
-      </video>
+
+    <!-- 4-up process grid: real stills, not AI video -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5 reveal-stagger grid-4-mobile-2">
+      <figure class="relative aspect-[3/4] overflow-hidden bg-stone-800 group">
+        <img src="img/hands-fence.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Fase 1 — cortenstaal hek wordt gemonteerd in de werfgrond" />
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 text-paper" style="background:linear-gradient(180deg,transparent,rgba(20,20,15,.9))">
+          <span class="mono text-[11px] text-brick block mb-1">01 · Week 1–2</span>
+          <span class="serif text-lg">Voorbereiden</span>
+          <p class="text-xs text-paper/70 mt-1 leading-snug">Uitzetten, uitgraven, fundering en dragende constructies.</p>
+        </figcaption>
+      </figure>
+      <figure class="relative aspect-[3/4] overflow-hidden bg-stone-800 group">
+        <img src="img/hands-pavers.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Fase 2 — bluesteen pavers worden per hand gelegd in visgraatpatroon" />
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 text-paper" style="background:linear-gradient(180deg,transparent,rgba(20,20,15,.9))">
+          <span class="mono text-[11px] text-brick block mb-1">02 · Week 2–5</span>
+          <span class="serif text-lg">Hardscape</span>
+          <p class="text-xs text-paper/70 mt-1 leading-snug">Terras, paden, trappen, hekken — alles droog en waterpas.</p>
+        </figcaption>
+      </figure>
+      <figure class="relative aspect-[3/4] overflow-hidden bg-stone-800 group">
+        <img src="img/hands-shears.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Fase 3 — beplanting wordt op maat gesneden en geplaatst" />
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 text-paper" style="background:linear-gradient(180deg,transparent,rgba(20,20,15,.9))">
+          <span class="mono text-[11px] text-brick block mb-1">03 · Week 5–8</span>
+          <span class="serif text-lg">Beplanting</span>
+          <p class="text-xs text-paper/70 mt-1 leading-snug">Vaste planten, bomen, klimop op draad, gazon of natuurlijke graslanden.</p>
+        </figcaption>
+      </figure>
+      <figure class="relative aspect-[3/4] overflow-hidden bg-stone-800 group">
+        <img src="img/aerial-terrace.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Fase 4 — werf opgeleverd en opgeruimd, vogelperspectief" />
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 md:p-5 text-paper" style="background:linear-gradient(180deg,transparent,rgba(20,20,15,.9))">
+          <span class="mono text-[11px] text-brick block mb-1">04 · Laatste dag</span>
+          <span class="serif text-lg">Oplevering</span>
+          <p class="text-xs text-paper/70 mt-1 leading-snug">Afgeveegd, uitgeruimd, materiaal weg. Overhandiging ter plaatse.</p>
+        </figcaption>
+      </figure>
     </div>
-    <div class="mt-4 flex flex-wrap justify-between items-center text-sm text-muted">
-      <span class="mono text-xs">Werf 17 / 2026 — Sint-Anna · 1 werfdag · ploeg van 4</span>
-      <a href="realisaties.html" class="border-b border-ink pb-0.5 hover:text-brick transition">Bekijk meer werven →</a>
+
+    <div class="mt-10 flex flex-wrap justify-between items-baseline gap-4 pt-6 border-t border-ink/10">
+      <span class="mono text-xs text-muted">Foto's van lopende werven — gemiddeld 4 tot 10 weken doorlooptijd.</span>
+      <a href="realisaties.html" class="text-sm border-b border-ink pb-0.5 hover:text-brick transition">Bekijk afgeronde werven →</a>
     </div>
   </div>
 </section>
@@ -453,7 +568,7 @@ function reviewModal() {
       <details class="faq" open>
         <summary>Wat kost een tuin bij u, ongeveer?</summary>
         <div class="answer">
-          <p>Onze gemiddelde aanleg ligt tussen <strong>€ 18 000 en € 65 000</strong>, afhankelijk van oppervlakte en hoeveel hardscape (terras, paden, hekken) erbij komt. Een richtprijs voor uw eigen tuin krijgt u gratis na een eerste bezoek — meestal binnen vijf werkdagen.</p>
+          <p>De meeste van onze werven liggen tussen <strong>€ 28 000 en € 95 000</strong>, afhankelijk van oppervlakte, hoeveel hardscape (terras, paden, hekken) erbij komt, en materiaalkeuze (bluesteen vs kassei, cortenstaal vs hout). Voor grotere domeinen en herstelprojecten gaan we tot € 250 000+. Een richtprijs voor uw eigen tuin krijgt u gratis na een eerste bezoek — meestal binnen vijf werkdagen.</p>
           <p class="mt-3">Onderhoudscontract: vanaf € 145 / maand voor een gemiddelde stadstuin, vanaf € 320 / maand voor een grotere villatuin.</p>
         </div>
       </details>

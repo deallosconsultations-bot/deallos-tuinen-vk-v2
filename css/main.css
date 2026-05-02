@@ -130,6 +130,135 @@ html.lenis { height: auto; }
 .btn-ghost-dark { color: var(--ink); border-color: rgba(20,20,15,0.3); }
 .btn-ghost-dark:hover { background: var(--ink); color: var(--paper); }
 
+/* ============ HOW IT WORKS — scroll-pinned narrative ============ */
+.hiw-grid {
+  display: grid;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .hiw-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+}
+
+/* Sticky image column — desktop only */
+.hiw-sticky {
+  position: relative;
+}
+.hiw-sticky .hiw-visual-stack {
+  position: sticky;
+  top: 7rem;
+  height: calc(100vh - 10rem);
+  max-height: 640px;
+}
+.hiw-visual {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.02) translateY(12px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  margin: 0;
+}
+.hiw-visual.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.hiw-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hiw-caption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 8px 14px;
+  background: rgba(20,20,15,0.85);
+  color: var(--paper);
+  backdrop-filter: blur(8px);
+  border-left: 2px solid var(--brick);
+}
+
+/* Text column */
+.hiw-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .hiw-steps { gap: 6rem; }
+}
+.hiw-step {
+  position: relative;
+  opacity: 0.35;
+  transition: opacity 0.6s var(--ease-out);
+  min-height: 20vh;
+}
+.hiw-step.active {
+  opacity: 1;
+}
+.hiw-step-body {
+  position: relative;
+}
+.hiw-index {
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  opacity: 0.06;
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+@media (min-width: 768px) {
+  .hiw-index { font-size: 7rem; top: -3rem; left: -1rem; }
+}
+.hiw-detail {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+.hiw-detail li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  color: rgba(20,20,15,0.78);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.hiw-detail li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: var(--brick);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* Mobile: inline images above each step, no sticky */
+.hiw-mobile-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: var(--paper-soft);
+}
+.hiw-mobile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ============ Cards / interactions ============ */
 .tilt { transition: transform 0.3s var(--ease-out); }
 .tilt:hover { transform: translateY(-3px); }

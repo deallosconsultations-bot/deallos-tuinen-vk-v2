@@ -72,4 +72,59 @@
   document.querySelectorAll('.tilt').forEach((card) => {
     card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
+
+  // ---- HOW IT WORKS: scroll-pinned narrative sync ----
+  // As the user scrolls, the step closest to the viewport center becomes "active",
+  // and the matching sticky visual fades in. Uses IntersectionObserver rootMargin trick:
+  // steps become active when their center crosses the middle 20% of the viewport.
+  const steps = document.querySelectorAll('.hiw-step');
+  const visuals = document.querySelectorAll('.hiw-visual');
+  if (steps.length && visuals.length) {
+    // Init: first step active so the section renders something before scroll
+    const setActive = (n) => {
+      steps.forEach(s => s.classList.toggle('active', s.dataset.step === n));
+      visuals.forEach(v => v.classList.toggle('active', v.dataset.step === n));
+    };
+    setActive('1');
+
+    const hio = new IntersectionObserver((entries) => {
+      // Among all currently intersecting steps, pick the one whose center is closest to
+      // the viewport center. This avoids the "two steps both active" flicker.
+      const intersecting = entries.filter(e => e.isIntersecting);
+      if (!intersecting.length) return;
+      let best = null, bestDist = Infinity;
+      intersecting.forEach(e => {
+        const r = e.target.getBoundingClientRect();
+        const center = r.top + r.height / 2;
+        const dist = Math.abs(window.innerHeight / 2 - center);
+        if (dist < bestDist) { bestDist = dist; best = e.target; }
+      });
+      if (best) setActive(best.dataset.step);
+    }, {
+      // Narrow band through the middle of the viewport — steps become "active" as they cross this line
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: [0, 0.5, 1]
+    });
+    steps.forEach(s => hio.observe(s));
+
+    // Also sync on direct scroll (smooth fallback when Lenis suppresses IO frames)
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        let best = null, bestDist = Infinity;
+        steps.forEach(s => {
+          const r = s.getBoundingClientRect();
+          const center = r.top + r.height / 2;
+          const dist = Math.abs(window.innerHeight / 2 - center);
+          if (dist < bestDist && r.top < window.innerHeight && r.bottom > 0) {
+            bestDist = dist; best = s;
+          }
+        });
+        if (best && best.dataset.step) setActive(best.dataset.step);
+      });
+    }, { passive: true });
+  }
 })();

@@ -13,18 +13,17 @@ window.addEventListener('load', () => {
   }).addTo(map);
 
   const projects = [
-    { name: 'Sint-Anna ommuurde stadstuin', city: 'Brugge', date: 'Week 17 / 2026', size: '125 m²', price: '€ 38 000', img: 'img/project-sint-anna.jpg', coords: [51.211, 3.230] },
-    { name: 'Renaissance pastorij', city: 'Lissewege', date: '2025', size: '2 200 m²', price: '€ 86 000', img: 'img/project-pastorij.jpg', coords: [51.301, 3.181] },
-    { name: 'Sint-Michiels — minimaal', city: 'Brugge', date: '2024', size: '480 m²', price: '€ 24 000', img: 'img/project-modernist.jpg', coords: [51.181, 3.197] },
-    { name: 'Polderhuis Zeebrugge', city: 'Zeebrugge', date: '2025', size: '650 m²', price: '€ 52 000', img: 'img/style-wild.jpg', coords: [51.336, 3.205] },
-    { name: 'Modernist Sint-Michiels', city: 'Brugge', date: '2024', size: '480 m²', price: '€ 31 000', img: 'img/style-modern.jpg', coords: [51.181, 3.197] },
-    { name: 'Kasteeltuin Beernem', city: 'Beernem', date: '2024', size: '4 100 m²', price: '€ 142 000', img: 'img/style-kasteel.jpg', coords: [51.131, 3.343] },
-    { name: 'Villa Knokke-Het Zoute', city: 'Knokke', date: '2023', size: '1 250 m²', price: '€ 78 000', img: 'img/style-mediterranean.jpg', coords: [51.350, 3.296] },
-    { name: 'Loft Oostende', city: 'Oostende', date: '2023', size: '95 m² (dakterras)', price: '€ 22 000', img: 'img/aerial-terrace.jpg', coords: [51.230, 2.918] },
-    { name: 'Boerderijtuin Torhout', city: 'Torhout', date: '2023', size: '3 600 m²', price: '€ 96 000', img: 'img/style-romantic.jpg', coords: [51.067, 3.106] },
-    { name: 'Stadshuis Damme', city: 'Damme', date: '2022', size: '180 m²', price: '€ 41 000', img: 'img/g-formal.jpg', coords: [51.250, 3.288] },
-    { name: 'Villa Damme', city: 'Damme', date: '2025', size: '1 800 m²', price: '€ 92 000', img: 'img/style-romantic.jpg', coords: [51.252, 3.286] },
-    { name: 'Rijwoning Jabbeke', city: 'Jabbeke', date: '2022', size: '320 m²', price: '€ 28 000', img: 'img/project-sint-anna.jpg', coords: [51.182, 3.099] }
+    { name: 'Sint-Anna ommuurde stadstuin', city: 'Brugge', date: 'Week 17 / 2026', size: '125 m²', price: '€ 42 000', img: 'img/project-sint-anna.jpg', coords: [51.211, 3.230] },
+    { name: 'Pastorij Lissewege — borders & kasseien', city: 'Lissewege', date: '2025', size: '850 m² tuindeel', price: '€ 78 000', img: 'img/project-pastorij.jpg', coords: [51.301, 3.181] },
+    { name: 'Sint-Michiels — minimaal', city: 'Brugge', date: '2024', size: '480 m²', price: '€ 68 000', img: 'img/project-modernist.jpg', coords: [51.181, 3.197] },
+    { name: 'Polderhuis Zeebrugge', city: 'Zeebrugge', date: '2025', size: '650 m²', price: '€ 92 000', img: 'img/style-wild.jpg', coords: [51.336, 3.205] },
+    { name: 'Kasteeltuin Beernem', city: 'Beernem', date: '2024', size: '4 100 m²', price: '€ 285 000', img: 'img/style-kasteel.jpg', coords: [51.131, 3.343] },
+    { name: 'Villa Knokke-Het Zoute', city: 'Knokke', date: '2023', size: '1 250 m²', price: '€ 220 000', img: 'img/style-mediterranean.jpg', coords: [51.350, 3.296] },
+    { name: 'Loft Oostende — dakterras', city: 'Oostende', date: '2023', size: '95 m²', price: '€ 28 000', img: 'img/aerial-terrace.jpg', coords: [51.230, 2.918] },
+    { name: 'Boerderijtuin Torhout', city: 'Torhout', date: '2023', size: '3 600 m²', price: '€ 240 000', img: 'img/style-romantic.jpg', coords: [51.067, 3.106] },
+    { name: 'Stadshuis Damme', city: 'Damme', date: '2022', size: '180 m²', price: '€ 52 000', img: 'img/g-formal.jpg', coords: [51.250, 3.288] },
+    { name: 'Villa Damme', city: 'Damme', date: '2025', size: '1 800 m²', price: '€ 185 000', img: 'img/style-romantic.jpg', coords: [51.252, 3.286] },
+    { name: 'Rijwoning Jabbeke', city: 'Jabbeke', date: '2022', size: '320 m²', price: '€ 48 000', img: 'img/project-sint-anna.jpg', coords: [51.182, 3.099] }
   ];
 
   const goldIcon = L.divIcon({
