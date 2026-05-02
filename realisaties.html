@@ -50,16 +50,17 @@
     <p class="text-[10px] tracking-[0.5em] uppercase text-[#c9a96a] mb-4">— Voor &amp; na</p>
     <h2 class="serif text-4xl md:text-5xl font-light mb-10">Sint-Anna stadstuin · sleep ←→</h2>
     <div class="relative aspect-[21/9] overflow-hidden rounded-sm select-none cursor-ew-resize" id="ba-slider"
-         @mousemove="pos = Math.max(0,Math.min(100,(($event.clientX - $event.currentTarget.getBoundingClientRect().left)/$event.currentTarget.offsetWidth)*100))">
+         @mousemove="pos = Math.max(0,Math.min(100,(($event.clientX - $event.currentTarget.getBoundingClientRect().left)/$event.currentTarget.offsetWidth)*100))"
+         @touchmove.prevent="const t=$event.touches[0]; pos = Math.max(0,Math.min(100,((t.clientX - $event.currentTarget.getBoundingClientRect().left)/$event.currentTarget.offsetWidth)*100))">
       <img src="img/hero-after.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Na" />
-      <div class="absolute inset-0 overflow-hidden" :style="`width:${pos}%`">
-        <img src="img/hero-before.jpg" class="absolute inset-0 w-screen max-w-none h-full object-cover" style="width:100vw" alt="Voor" />
+      <div class="absolute inset-y-0 left-0 overflow-hidden" :style="`width:${pos}%`">
+        <img src="img/hero-before.jpg" class="absolute inset-y-0 left-0 h-full object-cover object-left" :style="`width:${100/(pos/100)}%; max-width:none`" alt="Voor" />
       </div>
-      <div class="absolute top-0 bottom-0 w-px bg-[#c9a96a]" :style="`left:${pos}%`">
-        <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#c9a96a] flex items-center justify-center text-[#0e1410]">⟷</div>
+      <div class="absolute top-0 bottom-0 pointer-events-none" :style="`left:${pos}%; transform:translateX(-1px); width:2px; background:#c9a96a; box-shadow:0 0 12px rgba(201,169,106,.5)`">
+        <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-[#c9a96a] flex items-center justify-center text-[#0e1410] font-bold text-xl shadow-2xl">⟷</div>
       </div>
-      <div class="absolute top-4 left-4 text-[10px] tracking-[0.4em] uppercase text-stone-100 bg-[#0e1410]/60 px-3 py-1 rounded-full">Voor</div>
-      <div class="absolute top-4 right-4 text-[10px] tracking-[0.4em] uppercase text-stone-100 bg-[#0e1410]/60 px-3 py-1 rounded-full">Na</div>
+      <div class="absolute top-5 left-5 text-[10px] tracking-[0.4em] uppercase text-stone-100 bg-[#0e1410]/70 backdrop-blur-sm px-4 py-2 rounded-full border border-stone-100/20">Voor</div>
+      <div class="absolute top-5 right-5 text-[10px] tracking-[0.4em] uppercase text-[#0e1410] bg-[#c9a96a]/90 backdrop-blur-sm px-4 py-2 rounded-full">Na</div>
     </div>
   </div>
 </section>
