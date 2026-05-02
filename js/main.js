@@ -15,6 +15,7 @@
   window.addEventListener('load', () => {
     const bar = document.getElementById('loader-bar');
     const loader = document.getElementById('loader');
+    if (!loader) return;
     if (bar) gsap.to(bar, { width: '100%', duration: 1.2, ease: 'power2.inOut' });
     setTimeout(() => {
       gsap.to(loader, { opacity: 0, duration: 0.8, ease: 'power2.out', onComplete: () => loader.remove() });
@@ -23,11 +24,13 @@
 
   /* ============ Nav scroll state ============ */
   const nav = document.getElementById('nav');
-  ScrollTrigger.create({
-    start: 'top -50',
-    end: 99999,
-    onUpdate: (self) => nav.classList.toggle('scrolled', self.scroll() > 50)
-  });
+  if (nav) {
+    ScrollTrigger.create({
+      start: 'top -50',
+      end: 99999,
+      onUpdate: (self) => nav.classList.toggle('scrolled', self.scroll() > 50)
+    });
+  }
 
   /* ============ Hero scroll-pinned crossfade ============ */
   const before = document.getElementById('hero-before');
@@ -35,22 +38,23 @@
   const scrub = document.getElementById('hero-scrub');
   const heroVid = document.getElementById('hero-video');
 
-  ScrollTrigger.create({
-    trigger: '#hero',
-    start: 'top top',
-    end: 'bottom bottom',
-    scrub: 0.6,
-    onUpdate: (self) => {
-      after.style.opacity = self.progress;
-      before.style.transform = `scale(${1 + self.progress * 0.08})`;
-      after.style.transform = `scale(${1.08 - self.progress * 0.08})`;
-      if (scrub) scrub.style.width = (self.progress * 100) + '%';
-      // Drive video if present
-      if (heroVid && heroVid.duration) {
-        heroVid.currentTime = self.progress * heroVid.duration;
+  if (before && after && document.getElementById('hero')) {
+    ScrollTrigger.create({
+      trigger: '#hero',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 0.6,
+      onUpdate: (self) => {
+        after.style.opacity = self.progress;
+        before.style.transform = `scale(${1 + self.progress * 0.08})`;
+        after.style.transform = `scale(${1.08 - self.progress * 0.08})`;
+        if (scrub) scrub.style.width = (self.progress * 100) + '%';
+        if (heroVid && heroVid.duration) {
+          heroVid.currentTime = self.progress * heroVid.duration;
+        }
       }
-    }
-  });
+    });
+  }
 
   // Try to enable video version once it loads
   if (heroVid) {
