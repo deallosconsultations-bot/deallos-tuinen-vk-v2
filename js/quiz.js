@@ -4,6 +4,7 @@ function quiz() {
     step: 0,
     done: false,
     answers: [],
+    result: { title: '', desc: '', budget: '', time: '' },
     questions: [
       { q: 'Welke sfeer past het best bij u?',
         opts: ['Strak en modern — hardscape, vorm, rust', 'Romantisch — borders, bloei, geur', 'Mediterraan — terras, gravel, olijf', 'Wild & natuurlijk — inheems, vlinders, weinig gazon'] },

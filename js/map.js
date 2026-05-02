@@ -6,9 +6,10 @@ window.addEventListener('load', () => {
     .setView([51.20, 3.18], 10);
   L.control.zoom({ position: 'topright' }).addTo(map);
 
-  // Stadia AlidadeSmoothDark — premium dark editorial tiles
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-    maxZoom: 18, attribution: '© Stadia · OSM'
+  // CartoDB Dark Matter — keyless premium dark editorial tiles
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png', {
+    maxZoom: 18, subdomains: 'abcd',
+    attribution: '© <a href="https://carto.com/">CARTO</a> · OSM'
   }).addTo(map);
 
   const projects = [
