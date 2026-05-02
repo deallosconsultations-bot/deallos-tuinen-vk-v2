@@ -4,16 +4,22 @@
 .sticky-cta {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
   background: var(--ink); color: var(--paper);
-  padding: 10px 12px; display: flex; gap: 8px;
+  padding: 10px 12px 14px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0));
+  display: flex; gap: 10px;
   border-top: 1px solid rgba(244,239,229,0.15);
-  box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.35);
 }
 .sticky-cta a {
-  flex: 1; padding: 14px 12px; text-align: center;
-  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-  border: 1px solid rgba(244,239,229,0.2);
+  flex: 1; padding: 15px 10px; text-align: center;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+  border: 1px solid rgba(244,239,229,0.25);
+  color: var(--paper);
+  transition: background 0.2s, color 0.2s;
 }
-.sticky-cta a.primary { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.sticky-cta a:active { background: rgba(244,239,229,0.1); }
+.sticky-cta a.primary { background: var(--paper); color: var(--ink); border-color: var(--paper); font-weight: 600; }
+.sticky-cta a.primary:active { background: var(--brick); color: var(--paper); border-color: var(--brick); }
 @media (min-width: 768px) { .sticky-cta { display: none; } }
 
 /* ---- Postcode gate widget ---- */
@@ -24,11 +30,13 @@
 }
 .pc-input {
   background: transparent; border: none; outline: none;
-  color: var(--paper); font-size: 18px; padding: 8px 4px;
-  border-bottom: 1px solid rgba(244,239,229,0.4);
+  color: var(--paper); font-size: 22px; padding: 12px 4px;
+  border-bottom: 2px solid rgba(244,239,229,0.45);
   width: 100%; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em;
+  transition: border-color 0.2s;
 }
-.pc-input::placeholder { color: rgba(244,239,229,0.4); }
+.pc-input:focus { border-bottom-color: var(--paper); }
+.pc-input::placeholder { color: rgba(244,239,229,0.55); }
 
 .pc-result-yes { color: #b8d97a; }
 .pc-result-no  { color: #e89070; }
@@ -83,7 +91,7 @@ details.faq .answer {
   display: flex; gap: 6px; margin-bottom: 2rem;
 }
 .step-progress span {
-  flex: 1; height: 3px; background: rgba(20,20,15,0.1);
+  flex: 1; height: 4px; background: rgba(20,20,15,0.15);
   transition: background 0.4s;
 }
 .step-progress span.done { background: var(--ink); }
@@ -99,11 +107,12 @@ details.faq .answer {
 .choice-tile.selected { border-color: var(--ink); background: var(--ink); color: var(--paper); }
 .choice-tile.selected .text-muted { color: rgba(244,239,229,0.7); }
 
-/* ---- Phone ribbon ---- */
+/* ---- Phone ribbon — dark to match brand, no reddish-brown clash ---- */
 .phone-ribbon {
-  background: var(--brick); color: var(--paper);
-  padding: 8px 0; text-align: center;
+  background: var(--ink); color: var(--paper);
+  padding: 9px 1rem; text-align: center;
   font-size: 13px; letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(244,239,229,0.1);
 }
-.phone-ribbon a { font-weight: 500; }
-.phone-ribbon a:hover { text-decoration: underline; }
+.phone-ribbon a { font-weight: 500; color: var(--paper); padding: 2px 4px; border-bottom: 1px solid var(--brick); }
+.phone-ribbon a:hover { color: var(--brick); }

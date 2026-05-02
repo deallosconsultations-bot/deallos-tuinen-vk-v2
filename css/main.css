@@ -148,15 +148,22 @@ html.lenis { height: auto; }
 
 /* ============ Mobile responsive ============ */
 @media (max-width: 768px) {
-  .h-display { line-height: 1; }
+  .h-display { line-height: 1; font-size: clamp(2.2rem, 8vw, 3.4rem); }
   .nav-desk { display: none; }
-  #nav .nav-bar { padding: 1rem 1.25rem; }
+  #nav .nav-bar { padding: 0.9rem 1.25rem; }
   .grid-2-mobile-1 { grid-template-columns: 1fr !important; }
   .grid-3-mobile-1 { grid-template-columns: 1fr !important; }
   .grid-4-mobile-2 { grid-template-columns: 1fr 1fr !important; }
+  /* pad bottom so sticky-cta doesn't cover last content */
+  body { padding-bottom: 72px; }
+  /* larger season buttons + tap targets on mobile */
+  .choice-tile { padding: 1rem; min-height: 64px; }
+  /* hamburger bigger tap target */
+  #burger { min-width: 44px; min-height: 44px; }
 }
 @media (max-width: 480px) {
   .grid-4-mobile-2 { grid-template-columns: 1fr !important; }
+  .h-display { font-size: clamp(2rem, 9vw, 3rem); }
 }
 
 /* ============ Reduce motion ============ */

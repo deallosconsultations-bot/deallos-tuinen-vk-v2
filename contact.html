@@ -4,19 +4,31 @@
 <meta charset="utf-8" />
 <title>Contact — Tuinen Van Kerckhove · Brugge</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="description" content="Plan een vrijblijvend bezoek bij u thuis. Pieter belt u terug binnen 24 uur. Tuinen Van Kerckhove — Brugge, sinds 2008." />
 <meta name="theme-color" content="#14140f" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 fill=%22%2314140f%22/><text x=%2232%22 y=%2244%22 font-size=%2236%22 text-anchor=%22middle%22 fill=%22%23f4efe5%22 font-family=%22Georgia%22 font-style=%22italic%22>v</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/funnel.css">
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
 </head>
 <body>
 
-<header class="fixed top-0 left-0 right-0 z-50 scrolled" id="nav" style="background:rgba(20,20,15,.92);backdrop-filter:blur(18px)">
-  <div class="nav-bar max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between text-paper">
+<!-- =============== PHONE RIBBON =============== -->
+<div class="phone-ribbon">
+  <span class="hidden md:inline">Bel direct met Pieter — </span>
+  <a href="tel:+32496790558">0496 79 05 58</a>
+  <span class="hidden md:inline opacity-80"> · Ma–Vr 8:00–18:00 · gratis bezoek aanvragen</span>
+</div>
+
+<!-- =============== NAV =============== -->
+<header class="sticky top-0 left-0 right-0 z-50 scrolled" id="nav" style="background:rgba(20,20,15,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(244,239,229,0.08)">
+  <div class="nav-bar max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between text-paper">
     <a href="index.html" class="serif text-2xl font-medium">Tuinen Van Kerckhove</a>
     <nav class="nav-desk hidden md:flex gap-8 text-[13px]">
       <a href="diensten.html" class="nav-link">Wat wij doen</a>
@@ -24,117 +36,268 @@
       <a href="over.html" class="nav-link">Over ons</a>
       <a href="contact.html" class="nav-link active">Contact</a>
     </nav>
-    <button id="burger" class="md:hidden text-2xl text-paper">☰</button>
+    <a href="tel:+32496790558" class="nav-desk hidden md:inline-flex btn btn-ghost-light">0496 79 05 58</a>
+    <button id="burger" class="md:hidden text-3xl text-paper p-3 -mr-2 leading-none" aria-label="Menu">☰</button>
   </div>
 </header>
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-ink md:hidden flex flex-col items-center justify-center text-paper">
   <nav class="flex flex-col gap-7 text-2xl serif text-center">
     <a href="diensten.html">Wat wij doen</a><a href="realisaties.html">Realisaties</a><a href="over.html">Over ons</a><a href="contact.html">Contact</a>
   </nav>
+  <a href="tel:+32496790558" class="mt-12 text-brick serif text-3xl">0496 79 05 58</a>
 </div>
 
-<!-- AMBIENT HERO -->
-<section class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-ink">
-  <video autoplay muted loop playsinline poster="img/hands-shears.jpg" class="absolute inset-0 w-full h-full object-cover" data-autoplay>
-    <source src="vid/hands-shears.mp4" type="video/mp4">
+<!-- =============== HERO — real project, not generic "hands with shears" =============== -->
+<section class="relative h-[55vh] md:h-[70vh] overflow-hidden bg-ink">
+  <video autoplay muted loop playsinline poster="img/project-pastorij.jpg" class="absolute inset-0 w-full h-full object-cover" data-autoplay>
+    <source src="vid/aerial-terrace.mp4" type="video/mp4">
   </video>
-  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.35),rgba(20,20,15,.7))"></div>
-  <div class="relative z-10 h-full flex items-end px-6 md:px-10 pb-12 md:pb-16">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.45) 0%,rgba(20,20,15,.35) 40%,rgba(20,20,15,.85) 100%)"></div>
+  <div class="relative z-10 h-full flex items-end px-6 md:px-10 pb-10 md:pb-16">
     <div class="max-w-5xl mx-auto w-full text-paper">
-      <p class="eyebrow text-paper/70 mb-6 reveal">Contact</p>
+      <p class="eyebrow text-paper/70 mb-6 reveal">Contact · Plan een bezoek</p>
       <h1 class="serif h-display max-w-4xl reveal" style="transition-delay:.1s">
-        Een vrijblijvend bezoek bij u thuis.
+        Een vrijblijvend bezoek <em>bij u thuis.</em>
       </h1>
+      <p class="mt-6 text-paper/80 max-w-lg serif text-lg reveal" style="transition-delay:.2s">
+        Pieter komt langs, kijkt rond, en stuurt binnen vijf werkdagen een schets met richtprijs. Geen verplichting, geen mailfunnel.
+      </p>
     </div>
   </div>
 </section>
 
-<section class="bg-paper py-24 md:py-32 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 grid-2-mobile-1">
+<!-- =============== MULTI-STEP FORM — same 5-step funnel as homepage =============== -->
+<section id="funnel" class="bg-paper py-20 md:py-28 px-6 md:px-10">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-12 gap-10 md:gap-16">
 
-    <form class="md:col-span-7 bg-white border border-ink/10 p-8 md:p-10" x-data="{sent:false,season:'lente'}" @submit.prevent="sent=true">
-      <p class="eyebrow text-muted mb-2">Plan een bezoek</p>
-      <h2 class="serif text-3xl text-ink mb-8">Wij bellen u terug binnen 24 uur.</h2>
+    <div class="md:col-span-8" x-data="multiStepForm()">
+      <div class="bg-white border border-ink/10 p-6 md:p-10">
 
-      <template x-if="!sent">
-        <div class="space-y-5">
-          <div>
-            <label class="block eyebrow text-muted mb-2">Naam</label>
-            <input type="text" required class="w-full border-b border-ink/20 py-3 focus:outline-none focus:border-ink bg-transparent text-ink" />
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div>
-              <label class="block eyebrow text-muted mb-2">Telefoon</label>
-              <input type="tel" required class="w-full border-b border-ink/20 py-3 focus:outline-none focus:border-ink bg-transparent text-ink" />
-            </div>
-            <div>
-              <label class="block eyebrow text-muted mb-2">Email</label>
-              <input type="email" required class="w-full border-b border-ink/20 py-3 focus:outline-none focus:border-ink bg-transparent text-ink" />
-            </div>
-          </div>
-          <div>
-            <label class="block eyebrow text-muted mb-2">Postcode</label>
-            <input type="text" inputmode="numeric" placeholder="bv. 8000" class="w-full border-b border-ink/20 py-3 focus:outline-none focus:border-ink bg-transparent text-ink" />
-          </div>
-          <div>
-            <label class="block eyebrow text-muted mb-3">Welk seizoen wilt u opleveren?</label>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              <template x-for="s in ['lente','zomer','najaar','winter']" :key="s">
-                <button type="button" @click="season=s" :class="season===s ? 'bg-ink text-paper border-ink':'bg-white text-ink border-ink/20'" class="border py-3 eyebrow transition" x-text="s"></button>
-              </template>
-            </div>
-          </div>
-          <div>
-            <label class="block eyebrow text-muted mb-2">Vertel kort over uw tuin</label>
-            <textarea rows="4" class="w-full border border-ink/20 p-3 focus:outline-none focus:border-ink bg-transparent text-ink"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-full mt-4">Plan een bezoek →</button>
+        <div class="step-progress" x-show="!sent">
+          <span :class="progressClass(1)"></span>
+          <span :class="progressClass(2)"></span>
+          <span :class="progressClass(3)"></span>
+          <span :class="progressClass(4)"></span>
+          <span :class="progressClass(5)"></span>
         </div>
-      </template>
 
-      <template x-if="sent">
-        <div class="text-center py-12">
-          <div class="serif text-6xl text-brick mb-4">✓</div>
-          <h3 class="serif text-3xl text-ink mb-3">Bedankt.</h3>
-          <p class="text-muted max-w-sm mx-auto">Pieter belt u binnen 24 uur op het opgegeven nummer om een bezoek in te plannen.</p>
+        <!-- STEP 1: postcode -->
+        <div class="form-step" :class="step===1 && !sent ? 'active':''">
+          <p class="mono text-xs text-muted mb-3">Stap 1 van 5</p>
+          <h3 class="serif text-2xl md:text-3xl text-ink mb-2">Wat is uw postcode?</h3>
+          <p class="text-sm text-muted mb-6">Zo zien we meteen of we in uw buurt werken.</p>
+          <input type="text" inputmode="numeric" maxlength="4"
+            x-model="data.postcode"
+            placeholder="bv. 8000"
+            class="w-full text-3xl serif border-b-2 border-ink/20 focus:border-ink py-3 outline-none bg-transparent mono tracking-widest" />
+          <div class="mt-8 flex items-center justify-between gap-4">
+            <p class="text-xs text-muted" x-show="!canProceed()">Vul uw 4-cijferige postcode in</p>
+            <p class="text-xs text-muted invisible" x-show="canProceed()">&nbsp;</p>
+            <button @click="next()" :disabled="!canProceed()" :class="canProceed() ? 'btn btn-primary' : 'btn opacity-30 pointer-events-none'">Volgende →</button>
+          </div>
         </div>
-      </template>
-    </form>
 
-    <aside class="md:col-span-5 space-y-6">
+        <!-- STEP 2: project type -->
+        <div class="form-step" :class="step===2 && !sent ? 'active':''">
+          <p class="mono text-xs text-muted mb-3">Stap 2 van 5</p>
+          <h3 class="serif text-2xl md:text-3xl text-ink mb-6">Waar gaat het over?</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button type="button" class="choice-tile" :class="data.project==='aanleg'?'selected':''" @click="pick('project','aanleg')">
+              <div class="mono text-xs mb-1" :class="data.project==='aanleg'?'text-paper/70':'text-muted'">01</div>
+              <div class="serif text-lg">Volledige tuinaanleg</div>
+              <div class="text-sm mt-1" :class="data.project==='aanleg'?'text-paper/70':'text-muted'">Ontwerp + beplanting + gazon</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.project==='bestrating'?'selected':''" @click="pick('project','bestrating')">
+              <div class="mono text-xs mb-1" :class="data.project==='bestrating'?'text-paper/70':'text-muted'">02</div>
+              <div class="serif text-lg">Terras / oprit</div>
+              <div class="text-sm mt-1" :class="data.project==='bestrating'?'text-paper/70':'text-muted'">Bluesteen, kassei, gravel</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.project==='hekken'?'selected':''" @click="pick('project','hekken')">
+              <div class="mono text-xs mb-1" :class="data.project==='hekken'?'text-paper/70':'text-muted'">03</div>
+              <div class="serif text-lg">Hek of poort</div>
+              <div class="text-sm mt-1" :class="data.project==='hekken'?'text-paper/70':'text-muted'">Cortenstaal, hardhout, smeedijzer</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.project==='onderhoud'?'selected':''" @click="pick('project','onderhoud')">
+              <div class="mono text-xs mb-1" :class="data.project==='onderhoud'?'text-paper/70':'text-muted'">04</div>
+              <div class="serif text-lg">Jaaronderhoud</div>
+              <div class="text-sm mt-1" :class="data.project==='onderhoud'?'text-paper/70':'text-muted'">8 bezoeken per jaar</div>
+            </button>
+            <button type="button" class="choice-tile sm:col-span-2" :class="data.project==='anders'?'selected':''" @click="pick('project','anders')">
+              <div class="mono text-xs mb-1" :class="data.project==='anders'?'text-paper/70':'text-muted'">05</div>
+              <div class="serif text-lg">Iets anders / weet ik nog niet</div>
+              <div class="text-sm mt-1" :class="data.project==='anders'?'text-paper/70':'text-muted'">Bel Pieter — hij denkt graag mee.</div>
+            </button>
+          </div>
+          <div class="mt-8 flex justify-between">
+            <button @click="back()" class="btn btn-ghost-dark">← Terug</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: budget -->
+        <div class="form-step" :class="step===3 && !sent ? 'active':''">
+          <p class="mono text-xs text-muted mb-3">Stap 3 van 5</p>
+          <h3 class="serif text-2xl md:text-3xl text-ink mb-2">Welk budget heeft u in gedachten?</h3>
+          <p class="text-sm text-muted mb-6">Eerlijk antwoord helpt ons sneller een passend voorstel maken. Geen verplichting.</p>
+          <div class="grid gap-3">
+            <button type="button" class="choice-tile" :class="data.budget==='8-15'?'selected':''" @click="pick('budget','8-15')">
+              <div class="serif text-lg">€ 8 000 – 15 000</div>
+              <div class="text-sm mt-1" :class="data.budget==='8-15'?'text-paper/70':'text-muted'">Stadstuin, kleine heraanleg, terras tot 30 m²</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.budget==='15-35'?'selected':''" @click="pick('budget','15-35')">
+              <div class="serif text-lg">€ 15 000 – 35 000</div>
+              <div class="text-sm mt-1" :class="data.budget==='15-35'?'text-paper/70':'text-muted'">Volledige tuin gemiddelde grootte, of grote heraanleg</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.budget==='35-75'?'selected':''" @click="pick('budget','35-75')">
+              <div class="serif text-lg">€ 35 000 – 75 000</div>
+              <div class="text-sm mt-1" :class="data.budget==='35-75'?'text-paper/70':'text-muted'">Villatuin met hardscape en verlichting</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.budget==='75+'?'selected':''" @click="pick('budget','75+')">
+              <div class="serif text-lg">€ 75 000 +</div>
+              <div class="text-sm mt-1" :class="data.budget==='75+'?'text-paper/70':'text-muted'">Premium project, op maat, geen compromis</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.budget==='unsure'?'selected':''" @click="pick('budget','unsure')">
+              <div class="serif text-lg">Weet ik nog niet</div>
+              <div class="text-sm mt-1" :class="data.budget==='unsure'?'text-paper/70':'text-muted'">Geen probleem — Pieter helpt u kaderen tijdens het bezoek.</div>
+            </button>
+          </div>
+          <div class="mt-8 flex justify-between">
+            <button @click="back()" class="btn btn-ghost-dark">← Terug</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: timing -->
+        <div class="form-step" :class="step===4 && !sent ? 'active':''">
+          <p class="mono text-xs text-muted mb-3">Stap 4 van 5</p>
+          <h3 class="serif text-2xl md:text-3xl text-ink mb-2">Wanneer wilt u dat de tuin klaar is?</h3>
+          <p class="text-sm text-muted mb-6">Onze planning loopt meestal twee tot vier maanden vooruit.</p>
+          <div class="grid gap-3">
+            <button type="button" class="choice-tile" :class="data.timing==='asap'?'selected':''" @click="pick('timing','asap')">
+              <div class="serif text-lg">Zo snel mogelijk</div>
+              <div class="text-sm mt-1" :class="data.timing==='asap'?'text-paper/70':'text-muted'">Eerste vrije slot — bel Pieter voor actuele beschikbaarheid</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.timing==='spring'?'selected':''" @click="pick('timing','spring')">
+              <div class="serif text-lg">Voorjaar 2026</div>
+              <div class="text-sm mt-1" :class="data.timing==='spring'?'text-paper/70':'text-muted'">Mar–mei · ideaal seizoen voor beplanting</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.timing==='summer'?'selected':''" @click="pick('timing','summer')">
+              <div class="serif text-lg">Zomer 2026</div>
+              <div class="text-sm mt-1" :class="data.timing==='summer'?'text-paper/70':'text-muted'">Jun–aug · vooral hardscape</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.timing==='fall'?'selected':''" @click="pick('timing','fall')">
+              <div class="serif text-lg">Najaar 2026</div>
+              <div class="text-sm mt-1" :class="data.timing==='fall'?'text-paper/70':'text-muted'">Sep–nov · tweede beste seizoen voor beplanting</div>
+            </button>
+            <button type="button" class="choice-tile" :class="data.timing==='flexible'?'selected':''" @click="pick('timing','flexible')">
+              <div class="serif text-lg">Flexibel — op uw advies</div>
+              <div class="text-sm mt-1" :class="data.timing==='flexible'?'text-paper/70':'text-muted'">U weet beter wanneer iets ideaal is</div>
+            </button>
+          </div>
+          <div class="mt-8 flex justify-between">
+            <button @click="back()" class="btn btn-ghost-dark">← Terug</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: contact -->
+        <div class="form-step" :class="step===5 && !sent ? 'active':''">
+          <p class="mono text-xs text-muted mb-3">Stap 5 van 5</p>
+          <h3 class="serif text-2xl md:text-3xl text-ink mb-2">Hoe bereiken we u?</h3>
+          <p class="text-sm text-muted mb-6">Pieter belt u binnen 24 uur op het opgegeven nummer.</p>
+          <div class="space-y-5">
+            <div>
+              <label class="eyebrow text-muted block mb-2">Naam</label>
+              <input type="text" x-model="data.naam" required class="w-full border-b border-ink/20 focus:border-ink py-3 outline-none bg-transparent text-ink" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="eyebrow text-muted block mb-2">Telefoon</label>
+                <input type="tel" x-model="data.telefoon" required placeholder="bv. 0470 12 34 56" class="w-full border-b border-ink/20 focus:border-ink py-3 outline-none bg-transparent text-ink" />
+              </div>
+              <div>
+                <label class="eyebrow text-muted block mb-2">Email <span class="text-muted normal-case tracking-normal">(optioneel)</span></label>
+                <input type="email" x-model="data.email" class="w-full border-b border-ink/20 focus:border-ink py-3 outline-none bg-transparent text-ink" />
+              </div>
+            </div>
+            <div>
+              <label class="eyebrow text-muted block mb-2">Iets om vooraf te weten? <span class="normal-case tracking-normal">(optioneel)</span></label>
+              <textarea x-model="data.bericht" rows="3" placeholder="Bv. 'Ik heb geen tijd in de week, kan u ook 's zaterdags langskomen?'" class="w-full border border-ink/20 focus:border-ink p-3 outline-none bg-transparent text-ink"></textarea>
+            </div>
+
+            <!-- GDPR consent — Belgian/EU legal requirement -->
+            <label class="flex gap-3 items-start pt-2 cursor-pointer">
+              <input type="checkbox" x-model="data.consent" required class="mt-1 w-5 h-5 accent-ink flex-shrink-0" />
+              <span class="text-sm text-muted leading-relaxed">
+                Ik ga akkoord dat Tuinen Van Kerckhove mijn gegevens gebruikt om contact op te nemen over deze aanvraag.
+                Geen nieuwsbrieven, geen doorverkoop. <a href="#" class="underline hover:text-ink">Privacybeleid</a>.
+              </span>
+            </label>
+
+            <button @click="submit()" :disabled="!data.naam || !data.telefoon || !data.consent" class="btn btn-primary w-full mt-4" :class="(!data.naam || !data.telefoon || !data.consent) ? 'opacity-30 pointer-events-none' : ''">
+              Bezoek aanvragen — Pieter belt binnen 24u
+            </button>
+          </div>
+          <div class="mt-6 flex justify-start">
+            <button @click="back()" class="btn btn-ghost-dark">← Terug</button>
+          </div>
+        </div>
+
+        <!-- SENT -->
+        <template x-if="sent">
+          <div class="text-center py-12">
+            <div class="serif text-6xl text-brick mb-4">✓</div>
+            <h3 class="serif text-3xl text-ink mb-3">Bedankt, <span x-text="data.naam || 'buur'"></span>.</h3>
+            <p class="text-muted max-w-sm mx-auto">Pieter belt u binnen 24 uur op <span class="text-ink" x-text="data.telefoon"></span> om het bezoek in te plannen.</p>
+            <p class="mt-6 text-xs text-muted">Liever nu even bellen? <a href="tel:+32496790558" class="text-ink underline">0496 79 05 58</a></p>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <aside class="md:col-span-4 space-y-6">
+      <!-- Phone block — the parallel conversion path -->
       <div class="bg-ink text-paper p-8">
-        <p class="eyebrow text-paper/60 mb-4">Bel direct</p>
-        <a href="tel:+32496790558" class="serif text-3xl md:text-4xl block">0496 79 05 58</a>
-        <p class="text-paper/60 text-sm mt-2">Ma–Vr 8:00–18:00 · Za 9:00–13:00</p>
-      </div>
-
-      <div class="bg-white border border-ink/10 p-8" x-data="weather()" x-init="load()">
-        <p class="eyebrow text-muted mb-3">Werfweer Brugge</p>
-        <div class="flex items-end gap-4 mb-3">
-          <div class="serif text-5xl text-ink" x-text="temp + '°'"></div>
-          <div class="text-muted pb-2" x-text="cond"></div>
+        <p class="eyebrow text-paper/60 mb-4">Liever even bellen</p>
+        <a href="tel:+32496790558" class="serif text-3xl md:text-4xl block hover:text-brick transition">0496 79 05 58</a>
+        <p class="text-paper/60 text-sm mt-3">Pieter neemt zelf op. Als hij op een werf staat, bellen we binnen het uur terug.</p>
+        <div class="mt-6 pt-6 border-t border-paper/10 text-sm text-paper/70">
+          <p>Ma–Vr · 8:00 – 18:00</p>
+          <p>Za · 9:00 – 13:00</p>
+          <p class="opacity-60">Zo · gesloten</p>
         </div>
-        <p class="text-xs text-muted" x-text="rec"></p>
       </div>
 
-      <div class="bg-moss text-paper p-8" x-data="co2()" x-init="start()">
-        <p class="eyebrow text-paper/60 mb-3">CO₂ vastgelegd door onze tuinen</p>
-        <div class="serif text-4xl md:text-5xl mb-1" x-text="value.toLocaleString('nl-BE') + ' kg'"></div>
-        <p class="text-paper/60 text-sm">Sinds 2008 · 47 tuinen · live</p>
+      <!-- Workshop address — trust via physical presence -->
+      <div class="bg-white border border-ink/10 p-8">
+        <p class="eyebrow text-muted mb-3">Werfadres</p>
+        <p class="serif text-xl text-ink leading-snug">Maalse Steenweg 224<br/>8310 Brugge — Assebroek</p>
+        <p class="text-sm text-muted mt-3">Langs afspraak — de ploeg is meestal op werf.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Maalse+Steenweg+224+Brugge" class="inline-block mt-4 text-sm text-ink underline hover:text-brick">Route plannen →</a>
+      </div>
+
+      <!-- Reassurance — the FAQ before form abandonment -->
+      <div class="bg-paper-soft p-8">
+        <p class="eyebrow text-muted mb-3">Wat gebeurt er na uw aanvraag?</p>
+        <ol class="space-y-3 text-sm text-ink/80 leading-relaxed">
+          <li class="flex gap-3"><span class="mono text-brick">01.</span><span>Pieter belt u binnen 24 uur — gewoon om uw vraag goed te begrijpen.</span></li>
+          <li class="flex gap-3"><span class="mono text-brick">02.</span><span>Bezoek bij u thuis (45 min). Hij meet, kijkt, luistert.</span></li>
+          <li class="flex gap-3"><span class="mono text-brick">03.</span><span>Binnen 5 werkdagen: schets met richtprijs. Geen verplichting.</span></li>
+        </ol>
       </div>
     </aside>
   </div>
 </section>
 
-<!-- AMBIENT FORMAL CLOSER -->
-<section class="relative h-[40vh] md:h-[55vh] overflow-hidden bg-ink">
-  <video autoplay muted loop playsinline poster="img/g-formal.jpg" class="absolute inset-0 w-full h-full object-cover" data-autoplay>
-    <source src="vid/g-formal.mp4" type="video/mp4">
-  </video>
-  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.4),rgba(20,20,15,.85))"></div>
+<!-- =============== SOCIAL PROOF — one real-feeling review =============== -->
+<section class="bg-paper-soft py-20 md:py-24 px-6 md:px-10 border-y border-ink/10">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="eyebrow text-muted mb-6">★★★★★ · Google · 4,9 / 5 op 87 reviews</p>
+    <blockquote class="serif text-2xl md:text-4xl text-ink leading-snug max-w-3xl mx-auto">
+      "Pieter kwam precies op tijd. Hij luisterde vijfenveertig minuten en stelde vragen die ik zelf niet had bedacht. De schets kwam vier dagen later. Eerlijke prijs, en twee kleine dingen die hij afraadde omdat ze binnen drie jaar niet meer zouden staan. <em>Dat</em> maakt iemand een vakman."
+    </blockquote>
+    <p class="mt-8 text-sm text-muted">Katrien D. · Sint-Kruis · klant sinds 2023</p>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- =============== FOOTER — identical rich block =============== -->
 <footer class="site-footer">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
     <div class="md:col-span-5">
@@ -167,26 +330,13 @@
   </div>
 </footer>
 
+<!-- STICKY MOBILE CTA -->
+<div id="sticky-cta" class="sticky-cta">
+  <a href="tel:+32496790558" class="">📞 Bel Pieter</a>
+  <a href="#funnel" class="primary">Plan bezoek</a>
+</div>
+
 <script src="js/main.js"></script>
-<script>
-function weather(){
-  return {
-    temp:'—', cond:'…', rec:'',
-    async load(){
-      try {
-        const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=51.20&longitude=3.22&current=temperature_2m,weather_code,precipitation,wind_speed_10m&timezone=Europe%2FBrussels');
-        const d = await r.json();
-        this.temp = Math.round(d.current.temperature_2m);
-        const codes = {0:'Helder',1:'Overwegend zonnig',2:'Halfbewolkt',3:'Bewolkt',45:'Mist',48:'Aanvriezende mist',51:'Lichte motregen',53:'Motregen',55:'Hevige motregen',61:'Lichte regen',63:'Regen',65:'Hevige regen',71:'Lichte sneeuw',73:'Sneeuw',95:'Onweer'};
-        this.cond = codes[d.current.weather_code] || 'wisselend';
-        this.rec = (d.current.precipitation < 1 && d.current.wind_speed_10m < 30) ? 'Goed weer voor een werfbezoek vandaag.' : 'Vandaag liever telefonisch — werfbezoek morgen.';
-      } catch(e) { this.temp = 12; this.cond = 'Brugge'; this.rec = ''; }
-    }
-  }
-}
-function co2(){
-  return { value: 142385, start(){ setInterval(()=>{ this.value += Math.floor(Math.random()*3+1); }, 2400); } }
-}
-</script>
+<script src="js/funnel.js"></script>
 </body>
 </html>

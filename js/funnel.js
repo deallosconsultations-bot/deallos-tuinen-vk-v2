@@ -70,7 +70,8 @@ function multiStepForm() {
       naam: '',
       telefoon: '',
       email: '',
-      bericht: ''
+      bericht: '',
+      consent: false
     },
     next() { if (this.step < this.total) this.step++; },
     back() { if (this.step > 1) this.step--; },
@@ -87,11 +88,10 @@ function multiStepForm() {
       return true;
     },
     async submit() {
-      if (!this.data.naam || !this.data.telefoon) return;
+      if (!this.data.naam || !this.data.telefoon || !this.data.consent) return;
       // Form would POST to Resend/Formspree in production. For demo: simulate.
       // window.fetch('https://formspree.io/f/xyz', {method:'POST', body: JSON.stringify(this.data), headers:{'Accept':'application/json'}});
       this.sent = true;
-      // Telegram-style confirmation could fire here
     },
     progressClass(i) {
       if (i < this.step) return 'done';

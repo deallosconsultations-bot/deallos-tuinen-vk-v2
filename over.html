@@ -4,18 +4,27 @@
 <meta charset="utf-8" />
 <title>Over ons — Tuinen Van Kerckhove · vier vakmensen in Brugge</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="robots" content="noindex,nofollow" />
 <meta name="theme-color" content="#14140f" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/funnel.css">
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 </head>
 <body>
 
-<header class="fixed top-0 left-0 right-0 z-50" id="nav">
-  <div class="nav-bar max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between text-paper">
+<!-- =============== PHONE RIBBON =============== -->
+<div class="phone-ribbon">
+  <span class="hidden md:inline">Bel direct met Pieter — </span>
+  <a href="tel:+32496790558">0496 79 05 58</a>
+  <span class="hidden md:inline opacity-80"> · Ma–Vr 8:00–18:00 · gratis bezoek aanvragen</span>
+</div>
+
+<header class="sticky top-0 left-0 right-0 z-50" id="nav" style="background:rgba(20,20,15,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(244,239,229,0.08)">
+<div class="nav-bar max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between text-paper">
     <a href="index.html" class="serif text-2xl font-medium">Tuinen Van Kerckhove</a>
     <nav class="nav-desk hidden md:flex gap-8 text-[13px]">
       <a href="diensten.html" class="nav-link">Wat wij doen</a>
@@ -23,28 +32,33 @@
       <a href="over.html" class="nav-link active">Over ons</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
-    <a href="contact.html" class="nav-desk hidden md:inline-flex btn btn-ghost-light">Plan een bezoek</a>
-    <button id="burger" class="md:hidden text-2xl text-paper">☰</button>
+    <a href="tel:+32496790558" class="nav-desk hidden md:inline-flex btn btn-ghost-light">0496 79 05 58</a>
+<button id="burger" class="md:hidden text-3xl text-paper p-3 -mr-2 leading-none" aria-label="Menu">☰</button>
   </div>
 </header>
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-ink md:hidden flex flex-col items-center justify-center text-paper">
   <nav class="flex flex-col gap-7 text-2xl serif text-center">
     <a href="diensten.html">Wat wij doen</a><a href="realisaties.html">Realisaties</a><a href="over.html">Over ons</a><a href="contact.html">Contact</a>
   </nav>
+  <a href="tel:+32496790558" class="mt-12 text-brick serif text-3xl">0496 79 05 58</a>
+</div>
 </div>
 
-<!-- HERO — autoplay walkout video, no scroll trickery -->
-<section class="relative bg-ink h-screen overflow-hidden">
-  <video autoplay muted loop playsinline poster="img/team-walkout-1.jpg" class="absolute inset-0 w-full h-full object-cover" data-autoplay>
+<!-- HERO — autoplay walkout video, heavier gradient on mobile for legibility -->
+<section class="relative bg-ink h-[85vh] md:h-screen overflow-hidden">
+  <video autoplay muted loop playsinline poster="img/team-walkout-1.jpg" class="absolute inset-0 w-full h-full object-cover" style="object-position:center 30%" data-autoplay>
     <source src="vid/team-walkout-1.mp4" type="video/mp4">
   </video>
-  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.4) 0%,rgba(20,20,15,.2) 35%,rgba(20,20,15,.85) 100%)"></div>
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.55) 0%,rgba(20,20,15,.25) 30%,rgba(20,20,15,.9) 100%)"></div>
   <div class="relative z-10 h-full flex items-end">
-    <div class="max-w-7xl mx-auto w-full px-6 md:px-10 pb-16 md:pb-20 text-paper">
-      <p class="eyebrow text-paper/70 mb-6 reveal">Over ons</p>
+    <div class="max-w-7xl mx-auto w-full px-6 md:px-10 pb-12 md:pb-20 text-paper">
+      <p class="eyebrow text-paper/70 mb-6 reveal">De ploeg · Sinds 2008</p>
       <h1 class="serif h-display max-w-4xl reveal" style="transition-delay:.1s">
         Vier mensen.<br/>Eén werf per keer.
       </h1>
+      <p class="mt-6 text-paper/80 max-w-lg serif text-lg reveal" style="transition-delay:.2s">
+        Geen onderaannemers. Geen verrassingen. Wie u op het eerste bezoek ontmoet, staat ook op uw werf.
+      </p>
     </div>
   </div>
 </section>
@@ -178,5 +192,12 @@
 </footer>
 
 <script src="js/main.js"></script>
+<!-- STICKY MOBILE CTA -->
+<div id="sticky-cta" class="sticky-cta">
+  <a href="tel:+32496790558" class="">📞 Bel Pieter</a>
+  <a href="contact.html" class="primary">Plan bezoek</a>
+</div>
+
+<script src="js/funnel.js"></script>
 </body>
 </html>

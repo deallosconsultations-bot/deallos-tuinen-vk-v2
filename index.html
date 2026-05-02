@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <title>Tuinen Van Kerckhove — Tuinaannemer in Brugge sinds 2008</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="robots" content="noindex,nofollow" />
 <meta name="description" content="Familiebedrijf voor tuinaanleg, bestrating en onderhoud in Brugge en het Brugse Ommeland. Bezoek aanvragen → schets met richtprijs binnen 5 werkdagen. Sinds 2008." />
 <meta name="theme-color" content="#14140f" />
 <meta property="og:title" content="Tuinen Van Kerckhove — Brugge" />
@@ -40,7 +41,7 @@
       <a href="#funnel" class="nav-link">Bezoek aanvragen</a>
     </nav>
     <a href="#funnel" class="nav-desk hidden md:inline-flex btn btn-ghost-light">Plan een bezoek</a>
-    <button id="burger" class="md:hidden text-2xl text-paper">☰</button>
+<button id="burger" class="md:hidden text-3xl text-paper p-3 -mr-2 leading-none" aria-label="Menu">☰</button>
   </div>
 </header>
 
@@ -540,7 +541,9 @@ function reviewModal() {
           x-model="data.postcode"
           placeholder="bv. 8000"
           class="w-full text-3xl serif border-b-2 border-ink/20 focus:border-ink py-3 outline-none bg-transparent mono tracking-widest" />
-        <div class="mt-8 flex justify-end">
+        <div class="mt-8 flex items-center justify-between gap-4">
+          <p class="text-xs text-muted" x-show="!canProceed()">Vul uw 4-cijferige postcode in</p>
+          <p class="text-xs text-muted invisible" x-show="canProceed()">&nbsp;</p>
           <button @click="next()" :disabled="!canProceed()" :class="canProceed() ? 'btn btn-primary' : 'btn opacity-30 pointer-events-none'">Volgende →</button>
         </div>
       </div>
@@ -669,10 +672,18 @@ function reviewModal() {
             <label class="eyebrow text-muted block mb-2">Iets om vooraf te weten? <span class="normal-case tracking-normal">(optioneel)</span></label>
             <textarea x-model="data.bericht" rows="3" placeholder="Bv. 'Ik heb geen tijd in de week, kan u ook 's zaterdags langskomen?'" class="w-full border border-ink/20 focus:border-ink p-3 outline-none bg-transparent text-ink"></textarea>
           </div>
-          <button @click="submit()" :disabled="!data.naam || !data.telefoon" class="btn btn-primary w-full mt-4" :class="(!data.naam || !data.telefoon) ? 'opacity-30 pointer-events-none' : ''">
+          <!-- GDPR consent — Belgian/EU legal requirement -->
+          <label class="flex gap-3 items-start pt-2 cursor-pointer">
+            <input type="checkbox" x-model="data.consent" required class="mt-1 w-5 h-5 accent-ink flex-shrink-0" />
+            <span class="text-sm text-muted leading-relaxed">
+              Ik ga akkoord dat Tuinen Van Kerckhove mijn gegevens gebruikt om contact op te nemen over deze aanvraag.
+              Geen nieuwsbrieven, geen doorverkoop. <a href="#" class="underline hover:text-ink">Privacybeleid</a>.
+            </span>
+          </label>
+
+          <button @click="submit()" :disabled="!data.naam || !data.telefoon || !data.consent" class="btn btn-primary w-full mt-4" :class="(!data.naam || !data.telefoon || !data.consent) ? 'opacity-30 pointer-events-none' : ''">
             Bezoek aanvragen — Pieter belt binnen 24u
           </button>
-          <p class="text-xs text-muted text-center mt-3">Door te versturen gaat u akkoord met onze privacyvoorwaarden. We sturen geen nieuwsbrieven.</p>
         </div>
         <div class="mt-6 flex justify-start">
           <button @click="back()" class="btn btn-ghost-dark">← Terug</button>
