@@ -2,128 +2,109 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8" />
-<title>Over ons — Tuinen Van Kerckhove · het team</title>
+<title>Over ons — Tuinen Van Kerckhove · vier vakmensen in Brugge</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<meta name="theme-color" content="#0e1410" />
+<meta name="theme-color" content="#14140f" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/main.css">
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
 <header class="fixed top-0 left-0 right-0 z-50" id="nav">
-  <div class="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between text-stone-100">
-    <a href="index.html" class="flex items-baseline gap-3">
-      <span class="serif text-2xl font-medium">Van Kerckhove</span>
-      <span class="text-[10px] tracking-[0.3em] uppercase opacity-60 hidden sm:inline">Tuinen · Brugge</span>
-    </a>
+  <div class="nav-bar max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between text-paper">
+    <a href="index.html" class="serif text-2xl font-medium">Tuinen Van Kerckhove</a>
     <nav class="nav-desk hidden md:flex gap-8 text-[13px]">
-      <a href="diensten.html" class="nav-link">Diensten</a>
+      <a href="diensten.html" class="nav-link">Wat wij doen</a>
       <a href="realisaties.html" class="nav-link">Realisaties</a>
-      <a href="over.html" class="nav-link gold">Over ons</a>
+      <a href="over.html" class="nav-link active">Over ons</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
-    <a href="contact.html" class="nav-desk hidden md:inline-flex border border-stone-100/30 hover:bg-[#c9a96a] hover:text-[#0e1410] hover:border-[#c9a96a] transition px-5 py-2.5 rounded-full text-[12px] tracking-wider uppercase btn-magnetic">Plan een bezoek</a>
-    <button id="burger" class="md:hidden text-2xl text-stone-100">☰</button>
+    <a href="contact.html" class="nav-desk hidden md:inline-flex btn btn-ghost-light">Plan een bezoek</a>
+    <button id="burger" class="md:hidden text-2xl text-paper">☰</button>
   </div>
 </header>
-<div id="mobile-menu" class="fixed inset-0 z-40 bg-[#0e1410] md:hidden flex flex-col items-center justify-center text-stone-100">
-  <nav class="flex flex-col gap-8 text-2xl serif font-light">
-    <a href="diensten.html">Diensten</a><a href="realisaties.html">Realisaties</a><a href="over.html" class="gold">Over ons</a><a href="contact.html">Contact</a>
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-ink md:hidden flex flex-col items-center justify-center text-paper">
+  <nav class="flex flex-col gap-7 text-2xl serif text-center">
+    <a href="diensten.html">Wat wij doen</a><a href="realisaties.html">Realisaties</a><a href="over.html">Over ons</a><a href="contact.html">Contact</a>
   </nav>
 </div>
 
-<!-- TEAM WALKOUT VIDEO HERO — full bleed -->
-<section class="relative ink-bg h-screen overflow-hidden">
-  <video data-autoplay autoplay muted loop playsinline poster="img/team-walkout-1.jpg" class="absolute inset-0 w-full h-full object-cover">
+<!-- HERO — autoplay walkout video, no scroll trickery -->
+<section class="relative bg-ink h-screen overflow-hidden">
+  <video autoplay muted loop playsinline poster="img/team-walkout-1.jpg" class="absolute inset-0 w-full h-full object-cover" data-autoplay>
     <source src="vid/team-walkout-1.mp4" type="video/mp4">
   </video>
-  <img src="img/team-walkout-1.jpg" class="absolute inset-0 w-full h-full object-cover -z-10" alt="" />
-  <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410] via-[#0e1410]/30 to-[#0e1410]/60"></div>
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.4) 0%,rgba(20,20,15,.2) 35%,rgba(20,20,15,.85) 100%)"></div>
   <div class="relative z-10 h-full flex items-end">
-    <div class="max-w-7xl mx-auto w-full px-6 md:px-10 pb-16 md:pb-20 text-stone-100">
-      <p class="eyebrow gold mb-6 reveal">— Het team</p>
-      <h1 class="serif h-display font-light max-w-4xl reveal" style="transition-delay:0.15s">
-        Acht handen.<br/>Vier paar laarzen.<br/><em class="gold">Eén werf per keer.</em>
+    <div class="max-w-7xl mx-auto w-full px-6 md:px-10 pb-16 md:pb-20 text-paper">
+      <p class="eyebrow text-paper/70 mb-6 reveal">Over ons</p>
+      <h1 class="serif h-display max-w-4xl reveal" style="transition-delay:.1s">
+        Vier mensen.<br/>Eén werf per keer.
       </h1>
     </div>
   </div>
 </section>
 
-<!-- INTRO STORY -->
-<section class="paper-bg py-24 md:py-32 px-6 md:px-10">
-  <div class="max-w-4xl mx-auto">
-    <p class="eyebrow ink opacity-60 mb-6 reveal">— Het verhaal</p>
-    <h2 class="serif h1 font-light text-[#1e2b1f] mb-10 reveal" style="transition-delay:0.1s">
-      Pieter Van Kerckhove begon in 2008 met een aanhangwagen, een Stihl en het vaste idee dat een tuin pas af is op haar derde lente.
+<!-- STORY -->
+<section class="bg-paper py-24 md:py-32 px-6 md:px-10">
+  <div class="max-w-3xl mx-auto">
+    <p class="eyebrow text-muted mb-6 reveal">Verhaal</p>
+    <h2 class="serif h1 text-ink mb-10 reveal" style="transition-delay:.1s">
+      Pieter Van Kerckhove begon in 2008 met een aanhangwagen, een Stihl, en het vaste idee dat een tuin pas af is op haar derde lente.
     </h2>
-    <div class="text-stone-700 leading-relaxed space-y-6 text-lg reveal" style="transition-delay:0.2s">
+    <div class="text-muted leading-relaxed space-y-6 text-lg reveal" style="transition-delay:.2s">
       <p>Achttien jaar later zijn we met vier. Niet meer. Dat is een keuze.</p>
-      <p>We werken met één werf per keer, van begin tot einde. We laten geen onderaannemers los op een tuin die we zelf moeten opleveren. We bestellen onze planten bij twee Vlaamse kwekerijen waar we de kweker bij naam kennen, en onze bluesteen komt uit dezelfde groeve in Soignies waar Pieter z'n vader als jonge man al ging kijken.</p>
+      <p>We werken met één werf per keer, van begin tot einde. We laten geen onderaannemers los op een tuin die we zelf moeten opleveren. Onze planten komen van twee Vlaamse kwekerijen waar we de kweker bij naam kennen — Pampaplanten in Wachtebeke en Boomkwekerij Notaris in Aalter — en onze bluesteen komt uit dezelfde groeve in Soignies waar Pieter z'n vader als jonge man al ging kijken.</p>
       <p>Onze tuinen zijn niet de goedkoopste. Maar wij zijn wel de mensen die er — naar het einde van de afspraak — vrijdagmiddag staan met de bezem in de hand, omdat we toch nog dat ene blad zien liggen.</p>
     </div>
   </div>
 </section>
 
-<!-- AMBIENT BG STRIP — boxwood close-up -->
-<section class="relative h-[50vh] md:h-[70vh] overflow-hidden ink-bg">
-  <video data-autoplay autoplay muted loop playsinline poster="img/hands-shears.jpg" class="absolute inset-0 w-full h-full object-cover">
-    <source src="vid/hands-shears.mp4" type="video/mp4">
-  </video>
-  <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/95 via-[#0e1410]/30 to-transparent"></div>
-  <div class="relative z-10 h-full flex items-end p-6 md:p-12">
-    <div class="max-w-2xl text-stone-100 reveal">
-      <p class="eyebrow gold mb-4">— Ambacht</p>
-      <h3 class="serif h2 font-light">Een schaar van honderd jaar oud knipt nog altijd beter dan een trimmer.</h3>
-    </div>
-  </div>
-</section>
-
-<!-- INDIVIDUAL TEAM PORTRAITS — 4 distinct people -->
-<section class="ink-bg text-stone-100 py-24 md:py-32 px-6 md:px-10">
+<!-- TEAM PORTRAITS — 4 distinct -->
+<section class="bg-ink text-paper py-24 md:py-32 px-6 md:px-10">
   <div class="max-w-7xl mx-auto">
-    <p class="eyebrow gold mb-6 reveal">— De ploeg</p>
-    <h2 class="serif h1 font-light mb-16 reveal" style="transition-delay:0.1s">Vier vakmensen.<br/>Geen onderaannemers.</h2>
+    <p class="eyebrow text-paper/60 mb-6 reveal">De ploeg</p>
+    <h2 class="serif h1 mb-16 reveal" style="transition-delay:.1s">Vier vakmensen.</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger grid-4-mobile-2">
-      <div class="aspect-[3/4] relative overflow-hidden group">
-        <img src="img/team-pieter.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Pieter" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410] via-[#0e1410]/20 to-transparent"></div>
+      <div class="aspect-[3/4] relative overflow-hidden">
+        <img src="img/team-pieter.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Pieter" />
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(20,20,15,0) 50%, rgba(20,20,15,.95) 100%)"></div>
         <div class="absolute bottom-0 p-6">
-          <div class="eyebrow gold mb-2">Zaakvoerder</div>
-          <div class="serif text-2xl mb-1">Pieter Van Kerckhove</div>
-          <div class="text-stone-100/60 text-sm">18 jaar · ontwerp &amp; werfleiding</div>
+          <p class="mono text-[11px] text-paper/60 mb-2">01 / Zaakvoerder</p>
+          <h3 class="serif text-2xl mb-1">Pieter Van Kerckhove</h3>
+          <p class="text-paper/65 text-sm">18 jaar · ontwerp &amp; werfleiding</p>
         </div>
       </div>
-      <div class="aspect-[3/4] relative overflow-hidden group">
-        <img src="img/team-bart.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Bart" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410] via-[#0e1410]/20 to-transparent"></div>
+      <div class="aspect-[3/4] relative overflow-hidden">
+        <img src="img/team-bart.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Bart" />
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(20,20,15,0) 50%, rgba(20,20,15,.95) 100%)"></div>
         <div class="absolute bottom-0 p-6">
-          <div class="eyebrow gold mb-2">Voorman aanleg</div>
-          <div class="serif text-2xl mb-1">Bart Vermeulen</div>
-          <div class="text-stone-100/60 text-sm">12 jaar · beplanting &amp; gazon</div>
+          <p class="mono text-[11px] text-paper/60 mb-2">02 / Voorman aanleg</p>
+          <h3 class="serif text-2xl mb-1">Bart Vermeulen</h3>
+          <p class="text-paper/65 text-sm">12 jaar · beplanting &amp; gazon</p>
         </div>
       </div>
-      <div class="aspect-[3/4] relative overflow-hidden group">
-        <img src="img/team-joris.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Joris" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410] via-[#0e1410]/20 to-transparent"></div>
+      <div class="aspect-[3/4] relative overflow-hidden">
+        <img src="img/team-joris.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Joris" />
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(20,20,15,0) 50%, rgba(20,20,15,.95) 100%)"></div>
         <div class="absolute bottom-0 p-6">
-          <div class="eyebrow gold mb-2">Bestrating</div>
-          <div class="serif text-2xl mb-1">Joris Claeys</div>
-          <div class="text-stone-100/60 text-sm">9 jaar · bluesteen-specialist</div>
+          <p class="mono text-[11px] text-paper/60 mb-2">03 / Bestrating</p>
+          <h3 class="serif text-2xl mb-1">Joris Claeys</h3>
+          <p class="text-paper/65 text-sm">9 jaar · bluesteen-specialist</p>
         </div>
       </div>
-      <div class="aspect-[3/4] relative overflow-hidden group">
-        <img src="img/team-tibo.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Tibo" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410] via-[#0e1410]/20 to-transparent"></div>
+      <div class="aspect-[3/4] relative overflow-hidden">
+        <img src="img/team-tibo.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Tibo" />
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(20,20,15,0) 50%, rgba(20,20,15,.95) 100%)"></div>
         <div class="absolute bottom-0 p-6">
-          <div class="eyebrow gold mb-2">Onderhoud</div>
-          <div class="serif text-2xl mb-1">Tibo Demeyere</div>
-          <div class="text-stone-100/60 text-sm">6 jaar · jaarcontracten</div>
+          <p class="mono text-[11px] text-paper/60 mb-2">04 / Onderhoud</p>
+          <h3 class="serif text-2xl mb-1">Tibo Demeyere</h3>
+          <p class="text-paper/65 text-sm">6 jaar · jaarcontracten</p>
         </div>
       </div>
     </div>
@@ -131,46 +112,69 @@
 </section>
 
 <!-- VALUES -->
-<section class="paper-bg py-24 md:py-32 px-6 md:px-10">
+<section class="bg-paper py-24 md:py-32 px-6 md:px-10">
   <div class="max-w-7xl mx-auto">
-    <p class="eyebrow ink opacity-60 mb-6 reveal">— Hoe wij werken</p>
-    <h2 class="serif h1 font-light text-[#1e2b1f] mb-16 max-w-3xl reveal" style="transition-delay:0.1s">Drie afspraken die wij niet zullen breken.</h2>
+    <p class="eyebrow text-muted mb-6 reveal">Hoe wij werken</p>
+    <h2 class="serif h1 text-ink mb-16 max-w-3xl reveal" style="transition-delay:.1s">Drie afspraken die wij niet zullen breken.</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 reveal-stagger grid-3-mobile-1">
       <div>
-        <div class="serif text-7xl gold font-light mb-4">01</div>
-        <h3 class="serif text-2xl text-[#1e2b1f] mb-4">U praat met de baas.</h3>
-        <p class="text-stone-700 leading-relaxed">Pieter komt zelf op het eerste bezoek, levert het ontwerp en is op de werf aanwezig. Geen telefonische tussenmensen.</p>
+        <p class="mono text-muted text-sm mb-3">01</p>
+        <h3 class="serif text-2xl text-ink mb-4">U praat met de baas.</h3>
+        <p class="text-muted leading-relaxed">Pieter komt zelf op het eerste bezoek, levert het ontwerp en is op de werf aanwezig. Geen telefonische tussenmensen.</p>
       </div>
       <div>
-        <div class="serif text-7xl gold font-light mb-4">02</div>
-        <h3 class="serif text-2xl text-[#1e2b1f] mb-4">Geen onderaannemers.</h3>
-        <p class="text-stone-700 leading-relaxed">Aanleg, bestrating, hekwerk, onderhoud — allemaal door dezelfde vier mensen. We dragen wat wij zelf hebben gemaakt.</p>
+        <p class="mono text-muted text-sm mb-3">02</p>
+        <h3 class="serif text-2xl text-ink mb-4">Geen onderaannemers.</h3>
+        <p class="text-muted leading-relaxed">Aanleg, bestrating, hekwerk, onderhoud — allemaal door dezelfde vier mensen. We dragen wat wij zelf hebben gemaakt.</p>
       </div>
       <div>
-        <div class="serif text-7xl gold font-light mb-4">03</div>
-        <h3 class="serif text-2xl text-[#1e2b1f] mb-4">Vaste prijs vooraf.</h3>
-        <p class="text-stone-700 leading-relaxed">Wat in de offerte staat, blijft in de offerte. Meerwerk alleen mits uw schriftelijk akkoord. Altijd.</p>
+        <p class="mono text-muted text-sm mb-3">03</p>
+        <h3 class="serif text-2xl text-ink mb-4">Vaste prijs vooraf.</h3>
+        <p class="text-muted leading-relaxed">Wat in de offerte staat, blijft in de offerte. Meerwerk alleen mits uw schriftelijk akkoord. Altijd.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AMBIENT FORMAL VIDEO -->
-<section class="relative h-[60vh] md:h-[80vh] overflow-hidden ink-bg">
-  <video data-autoplay autoplay muted loop playsinline poster="img/g-formal.jpg" class="absolute inset-0 w-full h-full object-cover">
+<!-- AMBIENT FORMAL -->
+<section class="relative h-[50vh] md:h-[60vh] overflow-hidden bg-ink">
+  <video autoplay muted loop playsinline poster="img/g-formal.jpg" class="absolute inset-0 w-full h-full object-cover" data-autoplay>
     <source src="vid/g-formal.mp4" type="video/mp4">
   </video>
-  <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/85 via-transparent to-[#0e1410]/30"></div>
-  <div class="relative z-10 h-full flex items-end p-6 md:p-12">
-    <div class="max-w-3xl text-stone-100 reveal">
-      <p class="eyebrow gold mb-4">— Tot ziens op de werf</p>
-      <h3 class="serif h2 font-light">Wij zijn er.<br/><em class="gold">Wanneer u komt kijken.</em></h3>
-    </div>
-  </div>
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.4),rgba(20,20,15,.85))"></div>
 </section>
 
-<footer class="ink-bg text-stone-100/50 py-12 px-6 md:px-10 text-center text-sm border-t border-stone-100/10">
-  © 2026 Tuinen Van Kerckhove · Brugge — site door <a href="https://deallos.com" class="hover:gold">Deallos</a>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+    <div class="md:col-span-5">
+      <div class="flex items-baseline gap-3 mb-5"><span class="serif text-2xl text-paper">Tuinen Van Kerckhove</span></div>
+      <p class="leading-relaxed max-w-md text-muted-dark mb-6">Familiebedrijf voor tuinaanleg, bestrating en onderhoud in Brugge en het Brugse Ommeland. Geen onderaannemers. Geen verrassingen. Sinds 2008.</p>
+      <p class="text-sm text-muted-dark"><strong class="text-paper">Werkgebied</strong><br/>Brugge · Sint-Andries · Sint-Michiels · Assebroek · Sint-Kruis · Damme · Lissewege · Knokke · Beernem · Oostkamp · Jabbeke</p>
+    </div>
+    <div class="md:col-span-2">
+      <h4>Wat wij doen</h4>
+      <ul class="space-y-2 text-sm"><li><a href="diensten.html#aanleg">Tuinaanleg</a></li><li><a href="diensten.html#bestrating">Bestrating</a></li><li><a href="diensten.html#hekken">Hekwerk</a></li><li><a href="diensten.html#onderhoud">Onderhoud</a></li></ul>
+      <h4 class="mt-8">Site</h4>
+      <ul class="space-y-2 text-sm"><li><a href="realisaties.html">Realisaties</a></li><li><a href="over.html">Over ons</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div class="md:col-span-2">
+      <h4>Contact</h4>
+      <ul class="space-y-2 text-sm"><li><a href="tel:+32496790558">0496 79 05 58</a></li><li><a href="mailto:info@tuinenvankerckhove.be" class="break-all">info@tuinenvankerckhove.be</a></li><li class="pt-2">Maalse Steenweg 224<br/>8310 Brugge — Assebroek</li></ul>
+      <h4 class="mt-8">Openingsuren</h4>
+      <ul class="space-y-1 text-sm"><li>Ma–Vr · 8:00 – 18:00</li><li>Za · 9:00 – 13:00</li><li>Zo · gesloten</li></ul>
+    </div>
+    <div class="md:col-span-3">
+      <h4>Erkenningen</h4>
+      <ul class="space-y-2 text-sm"><li>Erkend hovenier — LIB 04/12</li><li>Lid AVBS</li><li>Verzekerd via AG Insurance</li></ul>
+      <h4 class="mt-8">Wettelijk</h4>
+      <ul class="space-y-1 text-sm legal"><li>Tuinen Van Kerckhove BV</li><li>BTW BE 0712.345.678</li><li>KBO 0712.345.678</li><li>RPR Gent — afdeling Brugge</li><li><a href="#">Privacy</a> · <a href="#">Algemene voorwaarden</a></li></ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-paper/10 flex flex-wrap items-center justify-between gap-4 legal">
+    <span>© 2026 Tuinen Van Kerckhove BV — Brugge</span>
+    <span class="opacity-60">Site door <a href="https://deallos.com" class="hover:text-paper">Deallos</a></span>
+  </div>
 </footer>
 
 <script src="js/main.js"></script>

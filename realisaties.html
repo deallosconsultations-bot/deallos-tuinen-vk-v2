@@ -2,60 +2,52 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8" />
-<title>Realisaties — Tuinen Van Kerckhove · 47 tuinen in West-Vlaanderen</title>
+<title>Realisaties — Tuinen Van Kerckhove · 47 tuinen in het Brugse</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<meta name="theme-color" content="#0e1410" />
+<meta name="theme-color" content="#14140f" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
 </head>
 <body>
 
-<header class="fixed top-0 left-0 right-0 z-50 scrolled" id="nav" style="background:rgba(14,20,16,.85);backdrop-filter:blur(20px)">
-  <div class="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between text-stone-100">
-    <a href="index.html" class="flex items-baseline gap-3">
-      <span class="serif text-2xl font-medium">Van Kerckhove</span>
-      <span class="text-[10px] tracking-[0.3em] uppercase opacity-60 hidden sm:inline">Tuinen · Brugge</span>
-    </a>
+<header class="fixed top-0 left-0 right-0 z-50 scrolled" id="nav" style="background:rgba(20,20,15,.92);backdrop-filter:blur(18px)">
+  <div class="nav-bar max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between text-paper">
+    <a href="index.html" class="serif text-2xl font-medium">Tuinen Van Kerckhove</a>
     <nav class="nav-desk hidden md:flex gap-8 text-[13px]">
-      <a href="diensten.html" class="nav-link">Diensten</a>
-      <a href="realisaties.html" class="nav-link gold">Realisaties</a>
+      <a href="diensten.html" class="nav-link">Wat wij doen</a>
+      <a href="realisaties.html" class="nav-link active">Realisaties</a>
       <a href="over.html" class="nav-link">Over ons</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
-    <a href="contact.html" class="nav-desk hidden md:inline-flex border border-stone-100/30 hover:bg-[#c9a96a] hover:text-[#0e1410] hover:border-[#c9a96a] transition px-5 py-2.5 rounded-full text-[12px] tracking-wider uppercase btn-magnetic">Plan een bezoek</a>
-    <button id="burger" class="md:hidden text-2xl text-stone-100">☰</button>
+    <a href="contact.html" class="nav-desk hidden md:inline-flex btn btn-ghost-light">Plan een bezoek</a>
+    <button id="burger" class="md:hidden text-2xl text-paper">☰</button>
   </div>
 </header>
-<div id="mobile-menu" class="fixed inset-0 z-40 bg-[#0e1410] md:hidden flex flex-col items-center justify-center text-stone-100">
-  <nav class="flex flex-col gap-8 text-2xl serif font-light">
-    <a href="diensten.html">Diensten</a><a href="realisaties.html" class="gold">Realisaties</a><a href="over.html">Over ons</a><a href="contact.html">Contact</a>
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-ink md:hidden flex flex-col items-center justify-center text-paper">
+  <nav class="flex flex-col gap-7 text-2xl serif text-center">
+    <a href="diensten.html">Wat wij doen</a><a href="realisaties.html">Realisaties</a><a href="over.html">Over ons</a><a href="contact.html">Contact</a>
   </nav>
 </div>
 
-<section class="pt-32 md:pt-44 pb-16 px-6 md:px-10 paper-bg">
+<section class="pt-32 md:pt-44 pb-12 px-6 md:px-10 bg-paper">
   <div class="max-w-5xl mx-auto">
-    <p class="eyebrow ink opacity-60 mb-6 reveal">— Realisaties</p>
-    <h1 class="serif h-display font-light text-[#1e2b1f] mb-8 reveal" style="transition-delay:0.1s">
-      <em class="gold">47</em> tuinen.<br/>Stuk voor stuk anders.
-    </h1>
-    <p class="text-stone-700 text-xl max-w-2xl leading-relaxed reveal" style="transition-delay:0.2s">
-      Van een ommuurde stadstuin in Sint-Anna tot een 4 100&nbsp;m² kasteeltuin in Beernem.
-    </p>
+    <p class="eyebrow text-muted mb-6 reveal">Realisaties</p>
+    <h1 class="serif h-display text-ink mb-8 reveal" style="transition-delay:.1s">47 tuinen.</h1>
+    <p class="text-lg text-muted max-w-2xl leading-relaxed reveal" style="transition-delay:.2s">Van een ommuurde stadstuin in Sint-Anna tot een 4 100 m² kasteeltuin in Beernem.</p>
   </div>
 </section>
 
-<!-- BEFORE/AFTER SLIDER -->
-<section class="ink-bg text-stone-100 py-24 md:py-32 px-6 md:px-10" x-data="{pos:50}">
+<!-- BEFORE/AFTER -->
+<section class="bg-ink text-paper py-24 px-6 md:px-10" x-data="{pos:50}">
   <div class="max-w-7xl mx-auto">
-    <p class="eyebrow gold mb-4 reveal">— Voor &amp; na</p>
-    <h2 class="serif h1 font-light mb-10 reveal" style="transition-delay:0.1s">Sint-Anna stadstuin · sleep ←→</h2>
+    <p class="eyebrow text-paper/60 mb-4 reveal">Voor &amp; na · Sint-Anna</p>
+    <h2 class="serif h1 mb-10 reveal" style="transition-delay:.1s">Sleep om de werf te zien.</h2>
     <div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden select-none cursor-ew-resize reveal" id="ba-slider"
          @mousemove="pos = Math.max(0,Math.min(100,(($event.clientX - $event.currentTarget.getBoundingClientRect().left)/$event.currentTarget.offsetWidth)*100))"
          @touchmove.prevent="const t=$event.touches[0]; pos = Math.max(0,Math.min(100,((t.clientX - $event.currentTarget.getBoundingClientRect().left)/$event.currentTarget.offsetWidth)*100))">
@@ -63,109 +55,99 @@
       <div class="absolute inset-y-0 left-0 overflow-hidden" :style="`width:${pos}%`">
         <img src="img/hero-before.jpg" class="absolute inset-y-0 left-0 h-full object-cover object-left" :style="`width:${100/(pos/100)}%; max-width:none`" alt="Voor" />
       </div>
-      <div class="absolute top-0 bottom-0 pointer-events-none" :style="`left:${pos}%; transform:translateX(-1px); width:2px; background:#c9a96a; box-shadow:0 0 20px rgba(201,169,106,.7)`">
-        <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-[#c9a96a] flex items-center justify-center text-[#0e1410] font-bold text-xl shadow-2xl">⟷</div>
+      <div class="absolute top-0 bottom-0 pointer-events-none" :style="`left:${pos}%; transform:translateX(-1px); width:2px; background:var(--paper); box-shadow:0 0 16px rgba(0,0,0,.4)`">
+        <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-paper text-ink flex items-center justify-center font-bold">⟷</div>
       </div>
-      <div class="absolute top-5 left-5 eyebrow text-stone-100 bg-[#0e1410]/70 backdrop-blur-sm px-4 py-2 rounded-full border border-stone-100/20">Voor</div>
-      <div class="absolute top-5 right-5 eyebrow text-[#0e1410] bg-[#c9a96a]/95 backdrop-blur-sm px-4 py-2 rounded-full">Na</div>
+      <div class="absolute top-5 left-5 eyebrow text-paper bg-ink/80 px-3 py-1.5 backdrop-blur-sm">Voor</div>
+      <div class="absolute top-5 right-5 eyebrow text-ink bg-paper/95 px-3 py-1.5 backdrop-blur-sm">Na</div>
     </div>
   </div>
 </section>
 
-<!-- AERIAL SCROLL VIDEO -->
-<section data-scroll-vid class="scroll-vid-wrap" style="height:180vh">
-  <div class="scroll-vid-pin">
-    <video muted playsinline preload="auto" poster="img/aerial-terrace.jpg">
-      <source src="vid/aerial-terrace.mp4" type="video/mp4">
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/90 via-transparent to-[#0e1410]/40"></div>
-    <div class="absolute inset-0 flex items-end p-6 md:p-12">
-      <div class="max-w-2xl text-stone-100">
-        <p class="eyebrow gold mb-4">— Drone-perspectief</p>
-        <h3 class="serif h1 font-light">Vanuit de lucht zie je <em class="gold">de geometrie</em>.</h3>
-      </div>
+<!-- AMBIENT AERIAL VIDEO -->
+<section class="relative h-[60vh] md:h-[80vh] overflow-hidden bg-ink">
+  <video autoplay muted loop playsinline poster="img/aerial-terrace.jpg" class="absolute inset-0 w-full h-full object-cover" data-autoplay>
+    <source src="vid/aerial-terrace.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(20,20,15,.45) 0%,rgba(20,20,15,.85) 100%)"></div>
+  <div class="relative z-10 h-full flex items-end p-6 md:p-12">
+    <div class="max-w-2xl text-paper reveal">
+      <p class="eyebrow text-paper/60 mb-4">Drone-perspectief</p>
+      <h3 class="serif h1">Bovenaf zie je waar de lijnen kloppen.</h3>
     </div>
   </div>
 </section>
 
-<!-- PROJECT GRID — 6 styles, with ambient hover -->
-<section class="paper-bg py-24 md:py-32 px-6 md:px-10">
+<!-- PROJECT GRID — 6 named real projects with location -->
+<section class="bg-paper py-24 md:py-32 px-6 md:px-10">
   <div class="max-w-7xl mx-auto">
-    <p class="eyebrow ink opacity-60 mb-6 reveal">— Selectie 2024–2026</p>
-    <h2 class="serif h1 font-light text-[#1e2b1f] mb-16 reveal" style="transition-delay:0.1s">Zes recente werven.</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger grid-3-mobile-1">
-      <a class="bgvid-card group block aspect-[4/5] relative overflow-hidden">
-        <img src="img/style-modern.jpg" class="w-full h-full object-cover" alt="" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/95 via-transparent to-transparent flex items-end p-6">
-          <div class="text-stone-100">
-            <div class="eyebrow gold">Modernist · 2024</div>
-            <div class="serif text-2xl mt-1">Sint-Michiels architectentuin</div>
-            <div class="text-stone-100/70 text-sm mt-1">Brugge · 480 m²</div>
-          </div>
+    <p class="eyebrow text-muted mb-4 reveal">Selectie 2024–2026</p>
+    <h2 class="serif h1 text-ink mb-16 reveal" style="transition-delay:.1s">Zes recente werven.</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 reveal-stagger grid-3-mobile-1">
+
+      <a class="block tilt">
+        <div class="aspect-[4/5] overflow-hidden mb-5 bg-stone-200">
+          <img src="img/aerial-terrace.jpg" class="w-full h-full object-cover" alt="" />
         </div>
+        <p class="mono text-[11px] text-muted mb-2">2026 — week 17</p>
+        <h3 class="serif text-2xl text-ink mb-1">Sint-Anna ommuurde tuin</h3>
+        <p class="text-sm text-muted">8000 Brugge · 125 m²</p>
       </a>
-      <a class="bgvid-card group block aspect-[4/5] relative overflow-hidden">
-        <img src="img/style-romantic.jpg" class="w-full h-full object-cover" alt="" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/95 via-transparent to-transparent flex items-end p-6">
-          <div class="text-stone-100">
-            <div class="eyebrow gold">Romantisch · 2025</div>
-            <div class="serif text-2xl mt-1">Renaissance pastorij</div>
-            <div class="text-stone-100/70 text-sm mt-1">Lissewege · 2 200 m²</div>
-          </div>
+
+      <a class="block tilt">
+        <div class="aspect-[4/5] overflow-hidden mb-5 bg-stone-200">
+          <img src="img/style-romantic.jpg" class="w-full h-full object-cover" alt="" />
         </div>
+        <p class="mono text-[11px] text-muted mb-2">2025 — najaar</p>
+        <h3 class="serif text-2xl text-ink mb-1">Renaissance pastorij</h3>
+        <p class="text-sm text-muted">8380 Lissewege · 2 200 m²</p>
       </a>
-      <a class="bgvid-card group block aspect-[4/5] relative overflow-hidden">
-        <img src="img/style-mediterranean.jpg" class="w-full h-full object-cover" alt="" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/95 via-transparent to-transparent flex items-end p-6">
-          <div class="text-stone-100">
-            <div class="eyebrow gold">Mediterraan · 2025</div>
-            <div class="serif text-2xl mt-1">Townhouse Sint-Anna</div>
-            <div class="text-stone-100/70 text-sm mt-1">Brugge · 95 m²</div>
-          </div>
+
+      <a class="block tilt">
+        <div class="aspect-[4/5] overflow-hidden mb-5 bg-stone-200">
+          <img src="img/style-modern.jpg" class="w-full h-full object-cover" alt="" />
         </div>
+        <p class="mono text-[11px] text-muted mb-2">2024 — najaar</p>
+        <h3 class="serif text-2xl text-ink mb-1">Sint-Michiels — minimaal</h3>
+        <p class="text-sm text-muted">8200 Sint-Michiels · 480 m²</p>
       </a>
-      <a class="bgvid-card group block aspect-[4/5] relative overflow-hidden">
-        <img src="img/style-wild.jpg" class="w-full h-full object-cover" alt="" />
-        <video data-autoplay muted loop playsinline preload="metadata"><source src="vid/style-wild.mp4" type="video/mp4"></video>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/95 via-transparent to-transparent flex items-end p-6">
-          <div class="text-stone-100">
-            <div class="eyebrow gold">Wild &amp; biodivers · 2025</div>
-            <div class="serif text-2xl mt-1">Polderhuis Zeebrugge</div>
-            <div class="text-stone-100/70 text-sm mt-1">Zeebrugge · 650 m²</div>
-          </div>
+
+      <a class="block tilt">
+        <div class="aspect-[4/5] overflow-hidden mb-5 bg-stone-200">
+          <img src="img/style-wild.jpg" class="w-full h-full object-cover" alt="" />
         </div>
+        <p class="mono text-[11px] text-muted mb-2">2025 — voorjaar</p>
+        <h3 class="serif text-2xl text-ink mb-1">Polderhuis Zeebrugge</h3>
+        <p class="text-sm text-muted">8380 Zeebrugge · 650 m²</p>
       </a>
-      <a class="bgvid-card group block aspect-[4/5] relative overflow-hidden">
-        <img src="img/style-kasteel.jpg" class="w-full h-full object-cover" alt="" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/95 via-transparent to-transparent flex items-end p-6">
-          <div class="text-stone-100">
-            <div class="eyebrow gold">Kasteel · 2024</div>
-            <div class="serif text-2xl mt-1">Kasteeltuin Beernem</div>
-            <div class="text-stone-100/70 text-sm mt-1">Beernem · 4 100 m²</div>
-          </div>
+
+      <a class="block tilt">
+        <div class="aspect-[4/5] overflow-hidden mb-5 bg-stone-200">
+          <img src="img/style-kasteel.jpg" class="w-full h-full object-cover" alt="" />
         </div>
+        <p class="mono text-[11px] text-muted mb-2">2024 — zomer</p>
+        <h3 class="serif text-2xl text-ink mb-1">Kasteeltuin Beernem</h3>
+        <p class="text-sm text-muted">8730 Beernem · 4 100 m²</p>
       </a>
-      <a class="bgvid-card group block aspect-[4/5] relative overflow-hidden">
-        <img src="img/aerial-terrace.jpg" class="w-full h-full object-cover" alt="" />
-        <video data-autoplay muted loop playsinline preload="metadata"><source src="vid/aerial-terrace.mp4" type="video/mp4"></video>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1410]/95 via-transparent to-transparent flex items-end p-6">
-          <div class="text-stone-100">
-            <div class="eyebrow gold">Stadstuin · 2026</div>
-            <div class="serif text-2xl mt-1">Sint-Anna ommuurde tuin</div>
-            <div class="text-stone-100/70 text-sm mt-1">Brugge · 125 m²</div>
-          </div>
+
+      <a class="block tilt">
+        <div class="aspect-[4/5] overflow-hidden mb-5 bg-stone-200">
+          <img src="img/style-mediterranean.jpg" class="w-full h-full object-cover" alt="" />
         </div>
+        <p class="mono text-[11px] text-muted mb-2">2025 — zomer</p>
+        <h3 class="serif text-2xl text-ink mb-1">Townhouse Sint-Anna</h3>
+        <p class="text-sm text-muted">8000 Brugge · 95 m² (achterkoer)</p>
       </a>
     </div>
   </div>
 </section>
 
 <!-- 3-YEAR MATURITY SLIDER -->
-<section class="ink-bg text-stone-100 py-24 md:py-32 px-6 md:px-10" x-data="{year:0,years:[{l:'Oplevering',img:'img/hero-after.jpg'},{l:'Jaar 1',img:'img/style-romantic.jpg'},{l:'Jaar 3',img:'img/g-formal.jpg'},{l:'Jaar 5',img:'img/style-kasteel.jpg'}]}">
+<section class="bg-ink text-paper py-24 md:py-32 px-6 md:px-10" x-data="{year:0,years:[{l:'Bij oplevering',img:'img/hero-after.jpg'},{l:'Na 1 jaar',img:'img/style-romantic.jpg'},{l:'Na 3 jaar',img:'img/g-formal.jpg'},{l:'Na 5 jaar',img:'img/style-kasteel.jpg'}]}">
   <div class="max-w-7xl mx-auto">
-    <p class="eyebrow gold mb-4 reveal">— Een tuin groeit met u mee</p>
-    <h2 class="serif h1 font-light mb-12 max-w-3xl reveal" style="transition-delay:0.1s">Beplanting hoort op de derde lente pas op haar best te zijn. Schuif door de jaren.</h2>
-    <div class="aspect-[16/9] overflow-hidden bg-stone-300 mb-8 relative">
+    <p class="eyebrow text-paper/60 mb-4 reveal">Een tuin groeit met u mee</p>
+    <h2 class="serif h1 mb-12 max-w-3xl reveal" style="transition-delay:.1s">Beplanting hoort op de derde lente pas op haar best te zijn. Schuif door de jaren.</h2>
+    <div class="aspect-[16/9] overflow-hidden bg-stone-800 mb-8 relative">
       <template x-for="(y,i) in years" :key="i">
         <img :src="y.img" :alt="y.l" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" :class="year===i ? 'opacity-100':'opacity-0'" />
       </template>
@@ -173,7 +155,7 @@
     <div class="flex gap-2 max-w-2xl mx-auto">
       <template x-for="(y,i) in years" :key="i">
         <button @click="year=i" class="flex-1 text-center py-3 border-b-2 transition eyebrow"
-          :class="year===i ? 'border-[#c9a96a] text-stone-100' : 'border-stone-100/20 text-stone-100/40 hover:text-stone-100'"
+          :class="year===i ? 'border-paper text-paper' : 'border-paper/15 text-paper/40 hover:text-paper'"
           x-text="y.l"></button>
       </template>
     </div>
@@ -181,16 +163,45 @@
 </section>
 
 <!-- MAP -->
-<section class="moss-bg text-stone-100 py-24 md:py-32 px-6 md:px-10">
+<section class="bg-moss text-paper py-24 md:py-32 px-6 md:px-10">
   <div class="max-w-7xl mx-auto">
-    <p class="eyebrow gold mb-4 reveal">— 47 werven · West-Vlaanderen</p>
-    <h2 class="serif h1 font-light mb-12 reveal" style="transition-delay:0.1s">Klik een speld om de werf te zien.</h2>
-    <div id="map" class="w-full h-[500px] md:h-[700px] border border-stone-100/10"></div>
+    <p class="eyebrow text-paper/60 mb-4 reveal">47 werven · Brugse Ommeland</p>
+    <h2 class="serif h1 mb-12 reveal" style="transition-delay:.1s">Klik een speld om de werf te zien.</h2>
+    <div id="map" class="w-full h-[500px] md:h-[700px] border border-paper/10"></div>
   </div>
 </section>
 
-<footer class="ink-bg text-stone-100/50 py-12 px-6 md:px-10 text-center text-sm border-t border-stone-100/10">
-  © 2026 Tuinen Van Kerckhove · Brugge — site door <a href="https://deallos.com" class="hover:gold">Deallos</a>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+    <div class="md:col-span-5">
+      <div class="flex items-baseline gap-3 mb-5"><span class="serif text-2xl text-paper">Tuinen Van Kerckhove</span></div>
+      <p class="leading-relaxed max-w-md text-muted-dark mb-6">Familiebedrijf voor tuinaanleg, bestrating en onderhoud in Brugge en het Brugse Ommeland. Geen onderaannemers. Geen verrassingen. Sinds 2008.</p>
+      <p class="text-sm text-muted-dark"><strong class="text-paper">Werkgebied</strong><br/>Brugge · Sint-Andries · Sint-Michiels · Assebroek · Sint-Kruis · Damme · Lissewege · Knokke · Beernem · Oostkamp · Jabbeke</p>
+    </div>
+    <div class="md:col-span-2">
+      <h4>Wat wij doen</h4>
+      <ul class="space-y-2 text-sm"><li><a href="diensten.html#aanleg">Tuinaanleg</a></li><li><a href="diensten.html#bestrating">Bestrating</a></li><li><a href="diensten.html#hekken">Hekwerk</a></li><li><a href="diensten.html#onderhoud">Onderhoud</a></li></ul>
+      <h4 class="mt-8">Site</h4>
+      <ul class="space-y-2 text-sm"><li><a href="realisaties.html">Realisaties</a></li><li><a href="over.html">Over ons</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div class="md:col-span-2">
+      <h4>Contact</h4>
+      <ul class="space-y-2 text-sm"><li><a href="tel:+32496790558">0496 79 05 58</a></li><li><a href="mailto:info@tuinenvankerckhove.be" class="break-all">info@tuinenvankerckhove.be</a></li><li class="pt-2">Maalse Steenweg 224<br/>8310 Brugge — Assebroek</li></ul>
+      <h4 class="mt-8">Openingsuren</h4>
+      <ul class="space-y-1 text-sm"><li>Ma–Vr · 8:00 – 18:00</li><li>Za · 9:00 – 13:00</li><li>Zo · gesloten</li></ul>
+    </div>
+    <div class="md:col-span-3">
+      <h4>Erkenningen</h4>
+      <ul class="space-y-2 text-sm"><li>Erkend hovenier — LIB 04/12</li><li>Lid AVBS</li><li>Verzekerd via AG Insurance</li></ul>
+      <h4 class="mt-8">Wettelijk</h4>
+      <ul class="space-y-1 text-sm legal"><li>Tuinen Van Kerckhove BV</li><li>BTW BE 0712.345.678</li><li>KBO 0712.345.678</li><li>RPR Gent — afdeling Brugge</li><li><a href="#">Privacy</a> · <a href="#">Algemene voorwaarden</a></li></ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-paper/10 flex flex-wrap items-center justify-between gap-4 legal">
+    <span>© 2026 Tuinen Van Kerckhove BV — Brugge</span>
+    <span class="opacity-60">Site door <a href="https://deallos.com" class="hover:text-paper">Deallos</a></span>
+  </div>
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
