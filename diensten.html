@@ -1,153 +1,190 @@
 <!doctype html>
-<html lang="nl" class="bg-stone-100">
+<html lang="nl">
 <head>
 <meta charset="utf-8" />
 <title>Diensten — Tuinen Van Kerckhove · Brugge</title>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content="Tuinaanleg, bestrating, hekwerk en jaaronderhoud — uit één hand, in Brugge en West-Vlaanderen." />
-<script src="https://cdn.tailwindcss.com"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#0e1410" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/main.css">
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
-<body class="antialiased text-stone-900">
+<body>
 
-<header class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 scrolled" id="nav">
-  <div class="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
-    <a href="index.html" class="flex items-baseline gap-3 nav-text">
+<header class="fixed top-0 left-0 right-0 z-50 scrolled" id="nav" style="background:rgba(14,20,16,.85);backdrop-filter:blur(20px)">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between text-stone-100">
+    <a href="index.html" class="flex items-baseline gap-3">
       <span class="serif text-2xl font-medium">Van Kerckhove</span>
       <span class="text-[10px] tracking-[0.3em] uppercase opacity-60 hidden sm:inline">Tuinen · Brugge</span>
     </a>
-    <nav class="hidden md:flex gap-8 text-[13px] nav-text">
-      <a href="diensten.html" class="nav-link text-[#c9a96a]">Diensten</a>
+    <nav class="nav-desk hidden md:flex gap-8 text-[13px]">
+      <a href="diensten.html" class="nav-link gold">Diensten</a>
       <a href="realisaties.html" class="nav-link">Realisaties</a>
       <a href="over.html" class="nav-link">Over ons</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
-    <a href="contact.html" class="hidden md:inline-flex items-center gap-2 border border-stone-900/30 hover:bg-[#c9a96a] hover:border-[#c9a96a] transition px-5 py-2.5 rounded-full text-[12px] tracking-wider uppercase nav-text">Plan een bezoek</a>
+    <a href="contact.html" class="nav-desk hidden md:inline-flex border border-stone-100/30 hover:bg-[#c9a96a] hover:text-[#0e1410] hover:border-[#c9a96a] transition px-5 py-2.5 rounded-full text-[12px] tracking-wider uppercase btn-magnetic">Plan een bezoek</a>
+    <button id="burger" class="md:hidden text-2xl text-stone-100">☰</button>
   </div>
 </header>
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-[#0e1410] md:hidden flex flex-col items-center justify-center text-stone-100">
+  <nav class="flex flex-col gap-8 text-2xl serif font-light">
+    <a href="diensten.html" class="gold">Diensten</a><a href="realisaties.html">Realisaties</a><a href="over.html">Over ons</a><a href="contact.html">Contact</a>
+  </nav>
+</div>
 
-<section class="pt-44 pb-20 px-6 md:px-10 bg-stone-100">
+<!-- HERO -->
+<section class="pt-32 md:pt-44 pb-16 px-6 md:px-10 paper-bg">
   <div class="max-w-5xl mx-auto">
-    <p class="text-[10px] tracking-[0.5em] uppercase text-[#1e2b1f]/60 mb-6">— Wat wij doen</p>
-    <h1 class="serif text-5xl md:text-7xl font-light leading-[1.05] text-[#1e2b1f] mb-8">
-      Vier disciplines.<br/><em class="text-[#c9a96a]">Eén ploeg.</em>
+    <p class="eyebrow ink opacity-60 mb-6 reveal">— Wat wij doen</p>
+    <h1 class="serif h-display font-light text-[#1e2b1f] mb-8 reveal" style="transition-delay:0.1s">
+      Vier disciplines.<br/><em class="gold">Eén ploeg.</em>
     </h1>
-    <p class="text-stone-700 text-xl max-w-2xl leading-relaxed">
-      Wij doen alles zelf, met onze eigen mensen. Geen onderaannemers die elkaar de schuld geven. Geen verrassingen achteraf.
+    <p class="text-stone-700 text-xl max-w-2xl leading-relaxed reveal" style="transition-delay:0.2s">
+      Wij doen alles zelf, met onze eigen mensen. Geen onderaannemers die elkaar de schuld geven.
     </p>
   </div>
 </section>
 
 <!-- AANLEG -->
-<section id="aanleg" class="bg-[#0e1410] text-stone-100 py-32 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    <div>
-      <p class="text-[#c9a96a] text-[11px] tracking-[0.4em] uppercase mb-6">01 / Aanleg</p>
-      <h2 class="serif text-5xl md:text-6xl font-light leading-[1.05] mb-8">Volledige tuinaanleg.</h2>
+<section id="aanleg" class="ink-bg text-stone-100 py-24 md:py-32 px-6 md:px-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center grid-2-mobile-1">
+    <div class="reveal">
+      <p class="gold eyebrow mb-6">01 / Aanleg</p>
+      <h2 class="serif h1 font-light mb-8">Volledige tuinaanleg.</h2>
       <p class="text-stone-100/75 leading-relaxed mb-8">
         Van leeg perceel tot volgroeide tuin. Wij tekenen het ontwerp, leveren de planten,
         leggen het gazon, plaatsen de irrigatie en blijven het eerste jaar mee waken.
       </p>
       <ul class="space-y-3 text-sm text-stone-100/80 mb-8">
-        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Ontwerp door eigen tuinarchitect</li>
-        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Beplanting (vaste planten, heesters, bomen)</li>
-        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Gazon (rolgazon of zaai)</li>
-        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Irrigatie met smart controller</li>
-        <li class="flex gap-4 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Eerste jaar gegarandeerd</li>
+        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="gold w-8">▸</span>Ontwerp door eigen tuinarchitect</li>
+        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="gold w-8">▸</span>Beplanting (vaste planten, heesters, bomen)</li>
+        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="gold w-8">▸</span>Gazon (rolgazon of zaai)</li>
+        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="gold w-8">▸</span>Irrigatie met smart controller</li>
+        <li class="flex gap-4 pb-3"><span class="gold w-8">▸</span>Eerste jaar gegarandeerd</li>
       </ul>
-      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-100/50">Vanaf <span class="serif text-3xl text-[#c9a96a] tracking-normal">€ 18 000</span> · doorlooptijd 4–10 weken</div>
+      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-100/50">Vanaf <span class="serif text-3xl gold tracking-normal">€ 18 000</span> · 4–10 weken</div>
     </div>
-    <div class="aspect-[4/5] bg-stone-800 overflow-hidden rounded-sm">
-      <img src="img/hero-after.jpg" alt="Tuinaanleg" class="w-full h-full object-cover" />
+    <div class="aspect-[4/5] overflow-hidden bgvid-card reveal">
+      <img src="img/design-flatlay.jpg" class="w-full h-full object-cover" alt="" />
+      <video data-autoplay muted loop playsinline preload="metadata">
+        <source src="vid/design-flatlay.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
 
 <!-- BESTRATING -->
-<section id="bestrating" class="bg-stone-100 py-32 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    <div class="aspect-[4/5] bg-stone-300 overflow-hidden rounded-sm md:order-1">
-      <img src="img/hero-before.jpg" alt="Bestrating" class="w-full h-full object-cover" />
+<section id="bestrating" class="paper-bg py-24 md:py-32 px-6 md:px-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center grid-2-mobile-1">
+    <div class="aspect-[4/5] overflow-hidden bgvid-card reveal md:order-1">
+      <img src="img/hands-pavers.jpg" class="w-full h-full object-cover" alt="" />
+      <video data-autoplay muted loop playsinline preload="metadata">
+        <source src="vid/hands-pavers.mp4" type="video/mp4">
+      </video>
     </div>
-    <div>
-      <p class="text-[#1e2b1f]/60 text-[11px] tracking-[0.4em] uppercase mb-6">02 / Bestrating</p>
-      <h2 class="serif text-5xl md:text-6xl font-light leading-[1.05] text-[#1e2b1f] mb-8">Terras &amp; oprit.</h2>
+    <div class="reveal">
+      <p class="text-[#1e2b1f]/60 eyebrow mb-6">02 / Bestrating</p>
+      <h2 class="serif h1 font-light text-[#1e2b1f] mb-8">Terras &amp; oprit.</h2>
       <p class="text-stone-700 leading-relaxed mb-8">
         Bluesteen, kassei, gravel, klinker of keramische tegels. Geleverd en gelegd door
         onze eigen mensen — zoals een goed terras hoort: vlak, droog, jaren mee.
       </p>
       <ul class="space-y-3 text-sm text-stone-700 mb-8">
-        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Bluesteen — kasselei, herringbone, dik formaat</li>
-        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Keramiek 60×60, 80×80 — onderhoudsarm, koel</li>
-        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Gravel met half-verharding — stille oprit</li>
-        <li class="flex gap-4 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Drainage en afwatering inbegrepen</li>
+        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="gold w-8">▸</span>Bluesteen — kasselei, herringbone, dik formaat</li>
+        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="gold w-8">▸</span>Keramiek 60×60, 80×80 — onderhoudsarm, koel</li>
+        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="gold w-8">▸</span>Gravel met half-verharding — stille oprit</li>
+        <li class="flex gap-4 pb-3"><span class="gold w-8">▸</span>Drainage en afwatering inbegrepen</li>
       </ul>
-      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-500">Vanaf <span class="serif text-3xl text-[#c9a96a] tracking-normal">€ 95</span><span class="serif text-base">/m²</span> · 1–3 weken werf</div>
+      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-500">Vanaf <span class="serif text-3xl gold tracking-normal">€ 95</span><span class="serif text-base">/m²</span> · 1–3 weken werf</div>
+    </div>
+  </div>
+</section>
+
+<!-- AERIAL SCROLL VIDEO -->
+<section data-scroll-vid class="scroll-vid-wrap" style="height:200vh">
+  <div class="scroll-vid-pin">
+    <video muted playsinline preload="auto" poster="img/aerial-terrace.jpg">
+      <source src="vid/aerial-terrace.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0e1410]/80 via-transparent to-[#0e1410]/20"></div>
+    <div class="absolute inset-0 flex items-center px-6 md:px-12">
+      <div class="max-w-md text-stone-100">
+        <p class="eyebrow gold mb-4">— Werf onder de drone</p>
+        <h3 class="serif h1 font-light mb-6">Een terras leg je <em class="gold">één keer</em>. Voor de volgende dertig jaar.</h3>
+        <p class="text-stone-100/80 leading-relaxed">Visgraat, halfsteens of vrij — maar altijd op een goed bedding, met goed afwatering, en met de juiste voeg.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- HEKKEN -->
-<section id="hekken" class="bg-[#1e2b1f] text-stone-100 py-32 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    <div>
-      <p class="text-[#c9a96a] text-[11px] tracking-[0.4em] uppercase mb-6">03 / Hekwerk</p>
-      <h2 class="serif text-5xl md:text-6xl font-light leading-[1.05] mb-8">Afsluitingen &amp; poorten.</h2>
+<section id="hekken" class="moss-bg text-stone-100 py-24 md:py-32 px-6 md:px-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center grid-2-mobile-1">
+    <div class="reveal">
+      <p class="gold eyebrow mb-6">03 / Hekwerk</p>
+      <h2 class="serif h1 font-light mb-8">Afsluitingen &amp; poorten.</h2>
       <p class="text-stone-100/75 leading-relaxed mb-8">
         Een goed hek doet zijn werk in stilte. Wij maken ze op maat in cortenstaal,
         thermisch hardhout, of klassiek smeedijzer — passend bij gevel en tuin.
       </p>
       <ul class="space-y-3 text-sm text-stone-100/80 mb-8">
-        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Cortenstaal — modern, weersbestendig</li>
-        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Thermisch essen of accoya hardhout</li>
-        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Schuif- en draaipoorten met automatisering</li>
-        <li class="flex gap-4 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Carports &amp; pergola's op maat</li>
+        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="gold w-8">▸</span>Cortenstaal — modern, weersbestendig</li>
+        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="gold w-8">▸</span>Thermisch essen of accoya hardhout</li>
+        <li class="flex gap-4 border-b border-stone-100/10 pb-3"><span class="gold w-8">▸</span>Schuif- en draaipoorten met automatisering</li>
+        <li class="flex gap-4 pb-3"><span class="gold w-8">▸</span>Carports &amp; pergola's op maat</li>
       </ul>
-      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-100/50">Vanaf <span class="serif text-3xl text-[#c9a96a] tracking-normal">€ 380</span><span class="serif text-base">/m</span> · 2–6 weken levering</div>
+      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-100/50">Vanaf <span class="serif text-3xl gold tracking-normal">€ 380</span><span class="serif text-base">/m</span> · 2–6 weken</div>
     </div>
-    <div class="aspect-[4/5] bg-stone-800 overflow-hidden rounded-sm">
-      <img src="img/hero-after.jpg" alt="Hekwerk" class="w-full h-full object-cover" />
+    <div class="aspect-[4/5] overflow-hidden bgvid-card reveal">
+      <img src="img/hands-fence.jpg" class="w-full h-full object-cover" alt="" />
+      <video data-autoplay muted loop playsinline preload="metadata">
+        <source src="vid/hands-fence.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
 
 <!-- ONDERHOUD -->
-<section id="onderhoud" class="bg-stone-100 py-32 px-6 md:px-10">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    <div class="aspect-[4/5] bg-stone-300 overflow-hidden rounded-sm md:order-1">
-      <img src="img/hero-before.jpg" alt="Onderhoud" class="w-full h-full object-cover" />
+<section id="onderhoud" class="paper-bg py-24 md:py-32 px-6 md:px-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center grid-2-mobile-1">
+    <div class="aspect-[4/5] overflow-hidden bgvid-card reveal md:order-1">
+      <img src="img/hands-shears.jpg" class="w-full h-full object-cover" alt="" />
+      <video data-autoplay muted loop playsinline preload="metadata">
+        <source src="vid/hands-shears.mp4" type="video/mp4">
+      </video>
     </div>
-    <div>
-      <p class="text-[#1e2b1f]/60 text-[11px] tracking-[0.4em] uppercase mb-6">04 / Onderhoud</p>
-      <h2 class="serif text-5xl md:text-6xl font-light leading-[1.05] text-[#1e2b1f] mb-8">Jaaronderhoud.</h2>
+    <div class="reveal">
+      <p class="text-[#1e2b1f]/60 eyebrow mb-6">04 / Onderhoud</p>
+      <h2 class="serif h1 font-light text-[#1e2b1f] mb-8">Jaaronderhoud.</h2>
       <p class="text-stone-700 leading-relaxed mb-8">
         Acht bezoeken per jaar, vaste prijs, vaste mensen. U opent op vrijdagavond uw poort:
         gazon gemaaid, randen geschoffeld, hagen geknipt, koffiebeker meegenomen.
       </p>
       <ul class="space-y-3 text-sm text-stone-700 mb-8">
-        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="text-[#c9a96a] w-8">▸</span>8 bezoeken per jaar (mar–okt)</li>
-        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Maaien, knippen, snoeien, schoffelen</li>
-        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="text-[#c9a96a] w-8">▸</span>Voorjaars- en najaarsbeurt</li>
-        <li class="flex gap-4 pb-3"><span class="text-[#c9a96a] w-8">▸</span>U krijgt foto-rapport na elk bezoek</li>
+        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="gold w-8">▸</span>8 bezoeken per jaar (mar–okt)</li>
+        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="gold w-8">▸</span>Maaien, knippen, snoeien, schoffelen</li>
+        <li class="flex gap-4 border-b border-stone-300 pb-3"><span class="gold w-8">▸</span>Voorjaars- en najaarsbeurt</li>
+        <li class="flex gap-4 pb-3"><span class="gold w-8">▸</span>Foto-rapport na elk bezoek</li>
       </ul>
-      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-500">Vanaf <span class="serif text-3xl text-[#c9a96a] tracking-normal">€ 145</span><span class="serif text-base">/maand</span> · jaarcontract</div>
+      <div class="text-[11px] tracking-[0.3em] uppercase text-stone-500">Vanaf <span class="serif text-3xl gold tracking-normal">€ 145</span><span class="serif text-base">/maand</span></div>
     </div>
   </div>
 </section>
 
-<section class="bg-[#0e1410] text-stone-100 py-32 px-6 md:px-10 text-center">
-  <p class="text-[10px] tracking-[0.5em] uppercase text-[#c9a96a] mb-6">— Klaar om te beginnen?</p>
-  <h2 class="serif text-4xl md:text-6xl font-light leading-[1.05] mb-10">Een vrijblijvend bezoek bij u thuis.</h2>
-  <a href="contact.html" class="bg-[#c9a96a] text-[#0e1410] px-10 py-4 rounded-full text-[12px] tracking-[0.3em] uppercase hover:bg-stone-100 transition">Plan uw bezoek →</a>
+<!-- CTA -->
+<section class="ink-bg text-stone-100 py-24 md:py-32 px-6 md:px-10 text-center">
+  <p class="eyebrow gold mb-6 reveal">— Klaar om te beginnen?</p>
+  <h2 class="serif h-display font-light mb-10 reveal" style="transition-delay:0.1s">Een vrijblijvend bezoek.</h2>
+  <a href="contact.html" class="btn-magnetic bg-[#c9a96a] text-[#0e1410] px-10 py-4 rounded-full text-[12px] tracking-[0.3em] uppercase hover:bg-stone-100 transition reveal" style="transition-delay:0.2s">Plan uw bezoek →</a>
 </section>
 
-<footer class="bg-[#0e1410] text-stone-100/50 py-12 px-6 md:px-10 text-center text-sm border-t border-stone-100/10">
-  © 2026 Tuinen Van Kerckhove · Brugge — site door <a href="https://deallos.com" class="hover:text-[#c9a96a]">Deallos</a>
+<footer class="ink-bg text-stone-100/50 py-12 px-6 md:px-10 text-center text-sm border-t border-stone-100/10">
+  © 2026 Tuinen Van Kerckhove · Brugge — site door <a href="https://deallos.com" class="hover:gold">Deallos</a>
 </footer>
 
 <script src="js/main.js"></script>
