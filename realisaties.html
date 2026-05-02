@@ -142,25 +142,7 @@
   </div>
 </section>
 
-<!-- 3-YEAR MATURITY SLIDER -->
-<section class="bg-ink text-paper py-24 md:py-32 px-6 md:px-10" x-data="{year:0,years:[{l:'Bij oplevering',img:'img/hero-after.jpg'},{l:'Na 1 jaar',img:'img/style-romantic.jpg'},{l:'Na 3 jaar',img:'img/g-formal.jpg'},{l:'Na 5 jaar',img:'img/style-kasteel.jpg'}]}">
-  <div class="max-w-7xl mx-auto">
-    <p class="eyebrow text-paper/60 mb-4 reveal">Een tuin groeit met u mee</p>
-    <h2 class="serif h1 mb-12 max-w-3xl reveal" style="transition-delay:.1s">Beplanting hoort op de derde lente pas op haar best te zijn. Schuif door de jaren.</h2>
-    <div class="aspect-[16/9] overflow-hidden bg-stone-800 mb-8 relative">
-      <template x-for="(y,i) in years" :key="i">
-        <img :src="y.img" :alt="y.l" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" :class="year===i ? 'opacity-100':'opacity-0'" />
-      </template>
-    </div>
-    <div class="flex gap-2 max-w-2xl mx-auto">
-      <template x-for="(y,i) in years" :key="i">
-        <button @click="year=i" class="flex-1 text-center py-3 border-b-2 transition eyebrow"
-          :class="year===i ? 'border-paper text-paper' : 'border-paper/15 text-paper/40 hover:text-paper'"
-          x-text="y.l"></button>
-      </template>
-    </div>
-  </div>
-</section>
+<!-- (Maturity slider removed — needs real photos of the same garden over multiple years) -->
 
 <!-- MAP -->
 <section class="bg-moss text-paper py-24 md:py-32 px-6 md:px-10">

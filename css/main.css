@@ -86,8 +86,9 @@ html.lenis { height: auto; }
 /* ============ Leaflet ============ */
 .leaflet-popup-content-wrapper {
   border-radius: 0; background: var(--ink); color: var(--paper);
-  border: 1px solid var(--brick);
+  border: 1px solid var(--brick); padding: 0; overflow: hidden;
 }
+.leaflet-popup-content { margin: 14px 18px; min-width: 260px; }
 .leaflet-popup-tip { background: var(--ink); }
 .leaflet-container { background: #1a2118; font-family: 'Inter', sans-serif; }
 .leaflet-control-attribution { background: rgba(20,20,15,0.7) !important; color: rgba(244,239,229,0.4) !important; font-size: 9px !important; }
