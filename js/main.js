@@ -70,21 +70,34 @@
   gsap.utils.toArray('.fade-up').forEach((el) => {
     gsap.to(el, {
       opacity: 1, y: 0, duration: 1.1, ease: 'power3.out',
-      scrollTrigger: { trigger: el, start: 'top 85%' }
+      scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none none' }
     });
   });
+  // Force-show anything that's already visible on load (for above-the-fold elements ScrollTrigger might miss)
+  setTimeout(() => {
+    document.querySelectorAll('.fade-up').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        gsap.to(el, { opacity: 1, y: 0, duration: 0.6 });
+      }
+    });
+    ScrollTrigger.refresh();
+  }, 200);
 
   /* ============ Stat counters ============ */
   document.querySelectorAll('[data-counter]').forEach((el) => {
     const target = parseInt(el.dataset.counter, 10);
     const obj = { v: 0 };
+    const fire = () => gsap.to(obj, { v: target, duration: 2.2, ease: 'power2.out',
+      onUpdate: () => { el.textContent = Math.round(obj.v).toLocaleString('nl-BE'); } });
     ScrollTrigger.create({
-      trigger: el, start: 'top 80%', once: true,
-      onEnter: () => {
-        gsap.to(obj, { v: target, duration: 2.2, ease: 'power2.out',
-          onUpdate: () => { el.textContent = Math.round(obj.v).toLocaleString('nl-BE'); } });
-      }
+      trigger: el, start: 'top 95%', once: true, onEnter: fire
     });
+    // safety: if element is already on screen at load, fire immediately
+    setTimeout(() => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && el.textContent === '0') fire();
+    }, 600);
   });
 
   /* ============ 3D tilt ============ */
