@@ -5,11 +5,9 @@
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
   background: var(--ink); color: var(--paper);
   padding: 10px 12px; display: flex; gap: 8px;
-  border-top: 1px solid rgba(244,239,229,0.1);
-  transform: translateY(100%);
-  transition: transform 0.4s var(--ease-out);
+  border-top: 1px solid rgba(244,239,229,0.15);
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
 }
-.sticky-cta.visible { transform: translateY(0); }
 .sticky-cta a {
   flex: 1; padding: 14px 12px; text-align: center;
   font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
