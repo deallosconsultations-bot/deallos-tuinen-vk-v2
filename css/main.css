@@ -1,0 +1,58 @@
+/* ============ Deallos / Tuinen Van Kerckhove V2 ============ */
+:root {
+  --ink: #0e1410;
+  --moss: #1e2b1f;
+  --sage: #9caf94;
+  --gold: #c9a96a;
+  --paper: #f3efe7;
+}
+
+html, body { margin: 0; }
+body { font-family: 'Inter', system-ui, sans-serif; }
+.serif { font-family: 'Cormorant Garamond', 'Georgia', serif; letter-spacing: -0.015em; }
+
+[x-cloak] { display: none !important; }
+
+/* Smooth scroll cursor sentinel */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Nav state */
+#nav.scrolled { background: rgba(243, 239, 231, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(14,20,16,0.08); }
+#nav.scrolled .nav-text { color: var(--ink); }
+
+.nav-link { position: relative; }
+.nav-link::after { content:''; position:absolute; left:0; bottom:-4px; height:1px; width:0; background:var(--gold); transition: width .35s cubic-bezier(.65,0,.35,1); }
+.nav-link:hover::after { width: 100%; }
+
+/* Fade-up entrance — set by GSAP */
+.fade-up { opacity: 0; transform: translateY(28px); }
+
+/* Tilt cards */
+.tilt { transform-style: preserve-3d; transition: transform .25s ease; will-change: transform; }
+
+/* Selection */
+::selection { background: var(--gold); color: var(--ink); }
+
+/* Leaflet popup tweak */
+.leaflet-popup-content-wrapper { border-radius: 2px; background: var(--ink); color: #f3efe7; }
+.leaflet-popup-tip { background: var(--ink); }
+.leaflet-container { background: #2a3a2c; font-family: 'Inter', sans-serif; }
+.leaflet-control-attribution { background: rgba(14,20,16,0.7) !important; color: rgba(243,239,231,0.5) !important; }
+.leaflet-control-attribution a { color: var(--gold) !important; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: var(--moss); }
+
+/* Quiz modal */
+#quiz-modal { animation: fadeIn .4s ease; }
+@keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+
+/* Hero typography */
+@media (max-width: 640px) {
+  #hero h2 { font-size: 3rem; line-height: 1; }
+}
