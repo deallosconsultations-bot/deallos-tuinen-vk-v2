@@ -1,0 +1,111 @@
+/* ============ Funnel components ============ */
+
+/* ---- Sticky mobile CTA bar ---- */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+  background: var(--ink); color: var(--paper);
+  padding: 10px 12px; display: flex; gap: 8px;
+  border-top: 1px solid rgba(244,239,229,0.1);
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-out);
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta a {
+  flex: 1; padding: 14px 12px; text-align: center;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  border: 1px solid rgba(244,239,229,0.2);
+}
+.sticky-cta a.primary { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+@media (min-width: 768px) { .sticky-cta { display: none; } }
+
+/* ---- Postcode gate widget ---- */
+.pc-widget {
+  background: rgba(244,239,229,0.08);
+  border: 1px solid rgba(244,239,229,0.2);
+  padding: 1.25rem; backdrop-filter: blur(12px);
+}
+.pc-input {
+  background: transparent; border: none; outline: none;
+  color: var(--paper); font-size: 18px; padding: 8px 4px;
+  border-bottom: 1px solid rgba(244,239,229,0.4);
+  width: 100%; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em;
+}
+.pc-input::placeholder { color: rgba(244,239,229,0.4); }
+
+.pc-result-yes { color: #b8d97a; }
+.pc-result-no  { color: #e89070; }
+
+/* ---- How it works steps ---- */
+.step-line {
+  position: relative;
+}
+.step-line::before {
+  content: ''; position: absolute; top: 24px; left: 50%; right: -50%;
+  height: 1px; background: var(--line);
+}
+.step-line:last-child::before { display: none; }
+
+/* ---- FAQ accordion ---- */
+details.faq {
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 0;
+}
+details.faq summary {
+  cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; font-family: 'Newsreader', serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 400;
+  transition: color 0.2s;
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after {
+  content: '+'; font-size: 1.5rem; color: var(--brick);
+  transition: transform 0.3s; line-height: 1;
+}
+details.faq[open] summary::after { content: '−'; }
+details.faq summary:hover { color: var(--brick); }
+details.faq .answer {
+  margin-top: 1rem; color: rgba(20,20,15,0.7);
+  line-height: 1.65; max-width: 65ch;
+}
+
+/* ---- Multi-step form ---- */
+.form-step {
+  display: none;
+}
+.form-step.active {
+  display: block;
+  animation: stepIn 0.35s var(--ease-out);
+}
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.step-progress {
+  display: flex; gap: 6px; margin-bottom: 2rem;
+}
+.step-progress span {
+  flex: 1; height: 3px; background: rgba(20,20,15,0.1);
+  transition: background 0.4s;
+}
+.step-progress span.done { background: var(--ink); }
+.step-progress span.active { background: var(--brick); }
+
+.choice-tile {
+  display: block; padding: 1.25rem;
+  border: 1px solid var(--line); cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: left;
+}
+.choice-tile:hover { border-color: var(--ink); background: rgba(20,20,15,0.02); }
+.choice-tile.selected { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.choice-tile.selected .text-muted { color: rgba(244,239,229,0.7); }
+
+/* ---- Phone ribbon ---- */
+.phone-ribbon {
+  background: var(--brick); color: var(--paper);
+  padding: 8px 0; text-align: center;
+  font-size: 13px; letter-spacing: 0.04em;
+}
+.phone-ribbon a { font-weight: 500; }
+.phone-ribbon a:hover { text-decoration: underline; }
